@@ -94,7 +94,6 @@ function initNavTabActive() {
         link.classList.add('active');
       }
     });
-    });
   });
 }
 
