@@ -162,7 +162,7 @@ function initMobileTicker() {
           // Reached end, snap back to start
           container.scrollTo({ left: 0, behavior: 'smooth' });
         } else {
-          container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+          container.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
         }
       }, 3000); // scrolls every 3 seconds
     }

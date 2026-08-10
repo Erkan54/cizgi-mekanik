@@ -961,7 +961,9 @@ a {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.4s ease 0.3s, transform 0.4s ease 0.3s;
-  t/* Base styles for page-main-content & services-info-grid (Desktop + Mobile) */
+}
+
+/* Base styles for page-main-content & services-info-grid (Desktop + Mobile) */
 .page-main-content {
   padding: 80px 20px;
   max-width: 900px;
@@ -1007,456 +1009,399 @@ a {
   line-height: 1.6;
 }
 
+
 /* ==========================================================================
-   MOBILE & RESPONSIVE DESIGN (Max Width: 992px) - COMPLETE MOBILE REBUILD
+   MOBILE & RESPONSIVE DESIGN (Max Width: 992px) - FRESH CUSTOM DESIGN
    ========================================================================== */
+
 .mobile-menu-btn {
   display: none;
-  background: #f1f5f9;
-  border: 1px solid #cbd5e1;
+  background: transparent;
+  border: none;
   color: #0f172a;
-  width: 40px;
-  height: 40px;
-  border-radius: 8px;
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   cursor: pointer;
   z-index: 1000;
-  align-items: center;
-  justify-content: center;
-  transition: var(--transition-fast);
+  padding: 5px;
 }
-.mobile-menu-btn:hover {
-  background: var(--brand-blue);
-  color: #ffffff;
-  border-color: var(--brand-blue);
-}
-
 .mobile-nav-overlay {
-  display: none; /* hidden on desktop */
+  display: none;
 }
 .mobile-fabs {
-  display: none; /* hidden on desktop */
+  display: none;
 }
 .ticker-arrow {
-  display: none; /* hidden on desktop */
-}
-.brands-ticker-layout {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 100%;
+  display: none;
 }
 
 @media (max-width: 992px) {
   html {
-    font-size: 14px !important;
+    font-size: 16px;
+  }
+  
+  body {
+    overflow-x: hidden;
   }
 
-  /* 1. HEADER & LOGO ALIGNMENT */
+  /* 1. HEADER & LOGO */
   .header {
-    padding: 10px 0 !important;
-    background: rgba(255, 255, 255, 0.98) !important;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06) !important;
+    padding: 12px 0;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   }
   .header-inner {
-    padding: 0 16px !important;
-  }
-  .logo {
-    margin-left: 0 !important;
-  }
-  .logo-text-top {
-    font-size: 1.1rem !important;
-    letter-spacing: 2px !important;
-  }
-  .logo-text-bottom {
-    font-size: 0.65rem !important;
-    letter-spacing: 3px !important;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
   .nav-links {
-    display: none !important; /* Hide desktop nav */
+    display: none;
   }
   .mobile-menu-btn {
-    display: flex !important; /* Show hamburger */
+    display: flex;
+  }
+  
+  .logo {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .logo-text-top {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    line-height: 1.1;
+  }
+  .logo-divider {
+    display: none;
+  }
+  .logo-text-bottom {
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    line-height: 1.1;
   }
 
-  /* 2. HERO SECTION & TITLE CENTERING */
+  /* 2. HERO SECTION */
   .hero-container {
-    padding-top: 85px !important;
-    margin-bottom: 20px !important;
-    text-align: center !important;
+    padding-top: 100px;
+    padding-bottom: 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
+  
   .hero-titles {
-    margin-bottom: 25px !important;
-    transform: none !important;
+    margin-bottom: 30px;
+    transform: none;
   }
+  
   .hero-title-main {
-    font-size: 2.8rem !important;
-    letter-spacing: 3px !important;
-    line-height: 1 !important;
-    transform: none !important; /* Reset desktop offset */
-    margin: 0 auto !important;
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+    margin: 0;
+    transform: none;
+    line-height: 1;
+    text-shadow: 2px 4px 10px rgba(0,0,0,0.1);
   }
+  
   .hero-title-line {
-    width: 140px !important;
-    height: 2px !important;
-    margin: 8px auto !important;
+    width: 80px;
+    height: 4px;
+    background: var(--brand-blue);
+    margin: 15px auto;
+    border-radius: 2px;
   }
+  
   .hero-title-sub {
-    font-size: 1.6rem !important;
-    letter-spacing: 4px !important;
-    line-height: 1 !important;
-    transform: none !important; /* Reset desktop offset */
-    margin: 0 auto !important;
+    font-size: 1.8rem;
+    letter-spacing: 6px;
+    margin: 0;
+    transform: none;
+    line-height: 1.2;
+    color: var(--text-dark);
   }
 
-  /* 3. SERVICES LINE -> ELEGANT TAG PILLS */
+  /* 3. SERVICES PILLS */
   .services-line {
-    display: flex !important;
-    flex-wrap: wrap !important;
-    justify-content: center !important;
-    gap: 8px !important;
-    margin: 20px auto 30px !important;
-    padding: 0 10px !important;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0 40px;
+    padding: 0 15px;
   }
   .services-line span:not(.separator) {
-    background: #f0f7fc !important;
-    color: var(--brand-blue) !important;
-    border: 1px solid #e0effe !important;
-    padding: 6px 14px !important;
-    border-radius: 20px !important;
-    font-size: 0.78rem !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.5px !important;
-    text-transform: uppercase !important;
+    background: linear-gradient(135deg, #f8fafc, #f1f5f9);
+    color: var(--brand-blue);
+    padding: 8px 16px;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    border: 1px solid rgba(0,114,188,0.1);
   }
   .services-line .separator {
-    display: none !important; /* Hide dots on mobile */
+    display: none;
   }
 
-  /* 4. HERO BUTTONS -> SLEEK COMPACT ACTION PILLS */
+  /* 4. SLEEK BUTTONS */
   .hero-buttons {
-    flex-direction: column !important;
-    gap: 10px !important;
-    width: 100% !important;
-    max-width: 290px !important;
-    margin: 0 auto !important;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 320px;
+    gap: 15px;
   }
   .btn {
-    width: 100% !important;
-    padding: 12px 20px !important;
-    font-size: 0.85rem !important;
-    font-weight: 700 !important;
-    letter-spacing: 0.8px !important;
-    border-radius: 30px !important;
-    box-shadow: 0 4px 14px rgba(0, 114, 188, 0.12) !important;
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .btn:active {
+    transform: scale(0.98);
+  }
+  .btn-primary {
+    box-shadow: 0 8px 20px rgba(0, 114, 188, 0.25);
+  }
+  .btn-outline {
+    background: rgba(255,255,255,0.9);
+    border: 2px solid var(--brand-blue);
+    color: var(--brand-blue);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
   }
 
-  /* 5. BRANDS SECTION & BRAND NAME TAGS */
+  /* 5. BRANDS SLIDER */
   .brands-wrapper {
-    padding-top: 15px !important;
-    padding-bottom: 10px !important;
+    padding: 40px 0;
+    background: #f8fafc;
   }
   .brands-title {
-    font-size: 0.85rem !important;
-    letter-spacing: 2px !important;
-    margin-bottom: 18px !important;
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 800;
   }
   .brands-ticker-layout {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    padding: 0 4px !important;
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 0 10px;
   }
-  .ticker-container {
-    width: 82% !important;
-    overflow-x: auto !important;
-    scroll-snap-type: x mandatory !important;
-    scroll-behavior: smooth !important;
-    padding: 10px 0 15px !important;
-    -ms-overflow-style: none !important;
-    scrollbar-width: none !important;
-  }
-  .ticker-container::-webkit-scrollbar {
-    display: none !important;
-  }
-  .ticker-container::before,
-  .ticker-container::after {
-    display: none !important;
-  }
-  .ticker-track {
-    animation: none !important;
-    display: flex !important;
-    gap: 12px !important;
-    width: max-content !important;
-  }
-  /* Hide duplicate items on mobile slider */
-  .ticker-item:nth-child(n+7) {
-    display: none !important;
-  }
-  .ticker-item {
-    flex: 0 0 240px !important;
-    scroll-snap-align: center !important;
-    margin: 0 !important;
-    padding: 16px 12px !important;
-    background: #ffffff !important;
-    border-radius: 12px !important;
-    border: 1px solid #e2e8f0 !important;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    position: relative !important;
-  }
-  .logo-box {
-    height: 65px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    transform: none !important;
-    filter: none !important;
-    opacity: 1 !important;
-  }
-  .logo-box img {
-    max-height: 52px !important;
-    max-width: 170px !important;
-    object-fit: contain !important;
-  }
-
-  /* BRAND NAME TAG UNDER LOGO (Pill Badge) */
-  .hover-tag {
-    display: block !important;
-    position: static !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
-    margin-top: 10px !important;
-    background: #f0f7fc !important;
-    color: #0072bc !important;
-    font-size: 0.78rem !important;
-    font-weight: 600 !important;
-    padding: 5px 12px !important;
-    border-radius: 6px !important;
-    border: 1px solid #e0effe !important;
-    box-shadow: none !important;
-    white-space: normal !important;
-    text-align: center !important;
-    width: 100% !important;
-    line-height: 1.35 !important;
-  }
-
+  
   .ticker-arrow {
-    display: flex !important;
-    background: #ffffff !important;
-    color: #0072bc !important;
-    border: 1px solid #cbd5e1 !important;
-    width: 34px !important;
-    height: 34px !important;
-    border-radius: 50% !important;
-    align-items: center !important;
-    justify-content: center !important;
-    font-size: 1rem !important;
-    cursor: pointer !important;
-    z-index: 10 !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #ffffff;
+    color: var(--brand-blue);
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    font-size: 1.2rem;
+    z-index: 10;
+    flex-shrink: 0;
+    cursor: pointer;
   }
   .ticker-arrow:active {
-    background: #0072bc !important;
-    color: #ffffff !important;
+    background: var(--brand-blue);
+    color: #fff;
+  }
+  
+  .ticker-container {
+    flex: 1;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    padding: 10px 5px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .ticker-container::-webkit-scrollbar {
+    display: none;
+  }
+  .ticker-track {
+    animation: none;
+    display: flex;
+    gap: 15px;
+    width: max-content;
+  }
+  .ticker-item {
+    scroll-snap-align: center;
+    flex: 0 0 260px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.05);
+    border: 1px solid #f1f5f9;
+  }
+  .logo-box {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo-box img {
+    max-height: 50px;
+    max-width: 180px;
+    object-fit: contain;
+  }
+  .hover-tag {
+    display: block;
+    position: relative;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    background: transparent;
+    color: var(--text-dark);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-align: center;
+    margin-top: 15px;
+    box-shadow: none;
+    border: none;
+    white-space: normal;
+    line-height: 1.4;
   }
 
-  /* 6. MOBILE NAV OVERLAY (Clean App Drawer) */
+  /* 6. DISTINCT MOBILE SANDWICH MENU */
   .mobile-nav-overlay {
-    display: block !important;
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    background: #ffffff !important;
-    z-index: 99999 !important;
-    opacity: 0 !important;
-    visibility: hidden !important;
-    transform: translateY(-10px) !important;
-    transition: all 0.3s ease !important;
-    overflow-y: auto !important;
-    padding-top: 70px !important;
+    display: block;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(145deg, #0f172a, #1e293b);
+    z-index: 99999;
+    transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
+    padding: 80px 30px 40px;
+    overflow-y: auto;
   }
   .mobile-nav-overlay.open {
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: translateY(0) !important;
+    right: 0;
   }
   .mobile-nav-close {
-    position: absolute !important;
-    top: 16px !important;
-    right: 16px !important;
-    width: 40px !important;
-    height: 40px !important;
-    border-radius: 50% !important;
-    background: #f1f5f9 !important;
-    color: #0f172a !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    font-size: 1.3rem !important;
-    cursor: pointer !important;
-    border: 1px solid #e2e8f0 !important;
+    position: absolute;
+    top: 25px;
+    right: 25px;
+    color: #fff;
+    font-size: 2rem;
+    cursor: pointer;
   }
   .mobile-nav-content {
-    display: flex !important;
-    flex-direction: column !important;
-    padding: 10px 20px 40px !important;
-    gap: 0 !important;
-    width: 100% !important;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
   }
-  .mobile-nav-link {
-    font-size: 1.1rem !important;
-    font-weight: 700 !important;
-    color: #0f172a !important;
-    text-decoration: none !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-    padding: 16px 12px !important;
-    border-bottom: 1px solid #f1f5f9 !important;
-    display: block !important;
-    text-align: left !important;
-  }
-  .mobile-nav-link:active {
-    color: var(--brand-blue) !important;
-    background: #f8fafc !important;
-  }
-  .mobile-nav-dropdown {
-    width: 100% !important;
-    border-bottom: 1px solid #f1f5f9 !important;
-  }
-  .mobile-nav-dropdown-title {
-    font-size: 1.1rem !important;
-    font-weight: 700 !important;
-    color: #0f172a !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-    cursor: pointer !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    padding: 16px 12px !important;
+  .mobile-nav-link, .mobile-nav-dropdown-title {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
   }
   .mobile-nav-dropdown-content {
     display: none;
-    flex-direction: column !important;
-    gap: 6px !important;
-    padding: 10px 12px 16px 20px !important;
-    background: #f8fafc !important;
-    border-radius: 8px !important;
-    margin-bottom: 10px !important;
+    flex-direction: column;
+    gap: 15px;
+    padding-top: 15px;
+    padding-left: 15px;
   }
   .mobile-nav-dropdown-content.open {
-    display: flex !important;
+    display: flex;
   }
   .mobile-nav-dropdown-content a {
-    color: #334155 !important;
-    font-size: 0.92rem !important;
-    font-weight: 600 !important;
-    text-decoration: none !important;
-    padding: 8px 10px !important;
-    border-radius: 6px !important;
-    line-height: 1.4 !important;
+    color: #94a3b8;
+    font-size: 1.1rem;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.2s;
+  }
+  .mobile-nav-dropdown-content a:active {
+    color: #fff;
   }
 
-  /* 7. MOBILE FABS (Floating Action Buttons) */
+  /* 7. FLOATING ACTION BUTTONS (FAB) */
   .mobile-fabs {
-    display: flex !important;
-    flex-direction: column !important;
-    gap: 10px !important;
-    position: fixed !important;
-    bottom: 16px !important;
-    right: 14px !important;
-    z-index: 999 !important;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: fixed;
+    bottom: 25px;
+    right: 20px;
+    z-index: 900;
   }
   .fab-btn {
-    width: 44px !important;
-    height: 44px !important;
-    border-radius: 50% !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    font-size: 1.3rem !important;
-    color: #ffffff !important;
-    text-decoration: none !important;
-    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2) !important;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: #fff;
+    text-decoration: none;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    transition: transform 0.2s;
   }
-  .fab-phone {
-    background: #0072bc !important;
+  .fab-btn:active {
+    transform: scale(0.9);
   }
-  .fab-whatsapp {
-    background: #25d366 !important;
-  }
+  .fab-phone { background: #0072bc; }
+  .fab-whatsapp { background: #25d366; }
 
-  /* 8. GENERAL MOBILE FIXES */
-  body, p, h1, h2, h3, h4, h5, h6 {
-    overflow-wrap: break-word;
-    word-break: normal;
-  }
-
-  .container {
-    padding: 0 16px !important;
-  }
-  .page-section {
-    padding: 25px 0 !important;
-  }
+  /* 8. OTHER FIXES */
   .page-main-content {
-    padding: 35px 16px !important;
+    padding: 50px 20px;
   }
   .page-main-title {
-    font-size: 1.8rem !important;
-  }
-  .page-main-desc {
-    font-size: 0.95rem !important;
-    margin-bottom: 25px !important;
+    font-size: 2.2rem;
   }
   .services-info-grid {
-    grid-template-columns: 1fr !important;
-    gap: 15px !important;
+    grid-template-columns: 1fr;
+    gap: 20px;
   }
-  .service-info-card {
-    padding: 20px !important;
-  }
-
-  .hero-slogan-inline {
-    padding: 15px 0 !important;
-  }
-  .hero-slogan-text {
-    font-size: 1.2rem !important;
-    letter-spacing: 0.5px !important;
-  }
-
   .contact-section {
-    padding: 30px 0 !important;
+    padding: 50px 20px;
   }
   .contact-title {
-    font-size: 1.4rem !important;
+    font-size: 1.8rem;
   }
   .contact-buttons {
-    flex-direction: column !important;
-    gap: 10px !important;
-    max-width: 290px !important;
-    margin: 0 auto !important;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
   }
   .contact-btn {
-    width: 100% !important;
-    padding: 12px 20px !important;
-    font-size: 0.88rem !important;
-    border-radius: 30px !important;
-  }
-
-  .footer {
-    padding: 20px 16px !important;
+    width: 100%;
+    padding: 16px;
+    font-size: 1rem;
+    border-radius: 12px;
   }
   .footer-inner {
-    flex-direction: column !important;
-    gap: 12px !important;
-    text-align: center !important;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
   }
 }
