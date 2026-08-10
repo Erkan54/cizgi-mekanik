@@ -585,7 +585,7 @@ a {
   background: rgba(238, 245, 252, 0.75); /* Daha mavi tonlarında ve saydam arkaplan */
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  padding: 100px 0;
+  padding: 40px 0 60px;
 }
 
 .contact-layout {
@@ -739,7 +739,7 @@ a {
    FOOTER
    ========================================================================== */
 .footer {
-  padding: 34px 0; /* Footer 3px daha büyütüldü (1.5px alt ve üste eklendi) */
+  padding: 20px 0; /* Footer yukarı çekildi */
   text-align: center;
   font-size: 0.78rem;
   font-weight: 500;
