@@ -1034,6 +1034,14 @@ a {
   display: none;
 }
 
+.brands-ticker-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
 @media (max-width: 992px) {
   html {
     font-size: 16px;
