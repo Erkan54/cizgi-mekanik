@@ -961,16 +961,7 @@ a {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.4s ease 0.3s, transform 0.4s ease 0.3s;
-  text-align: center;
-  padding: 0 20px;
-}
-
-.page-transition-overlay.active .transition-slogan {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Base styles for page-main-content & services-info-grid (Desktop + Mobile) */
+  t/* Base styles for page-main-content & services-info-grid (Desktop + Mobile) */
 .page-main-content {
   padding: 80px 20px;
   max-width: 900px;
@@ -1017,7 +1008,7 @@ a {
 }
 
 /* ==========================================================================
-   MOBILE & RESPONSIVE DESIGN (Max Width: 992px)
+   MOBILE & RESPONSIVE DESIGN (Max Width: 992px) - COMPLETE MOBILE REBUILD
    ========================================================================== */
 .mobile-menu-btn {
   display: none;
@@ -1059,23 +1050,28 @@ a {
 
 @media (max-width: 992px) {
   html {
-    font-size: 14px !important; /* Automatic clean scale down */
+    font-size: 14px !important;
   }
 
-  /* HEADER & LOGO */
+  /* 1. HEADER & LOGO ALIGNMENT */
   .header {
     padding: 10px 0 !important;
+    background: rgba(255, 255, 255, 0.98) !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06) !important;
   }
   .header-inner {
     padding: 0 16px !important;
   }
+  .logo {
+    margin-left: 0 !important;
+  }
   .logo-text-top {
     font-size: 1.1rem !important;
-    letter-spacing: 2.5px !important;
+    letter-spacing: 2px !important;
   }
   .logo-text-bottom {
     font-size: 0.65rem !important;
-    letter-spacing: 3.5px !important;
+    letter-spacing: 3px !important;
   }
   .nav-links {
     display: none !important; /* Hide desktop nav */
@@ -1084,7 +1080,193 @@ a {
     display: flex !important; /* Show hamburger */
   }
 
-  /* MOBILE NAV OVERLAY (Clean App Drawer - Inspired by Avukat Project) */
+  /* 2. HERO SECTION & TITLE CENTERING */
+  .hero-container {
+    padding-top: 85px !important;
+    margin-bottom: 20px !important;
+    text-align: center !important;
+  }
+  .hero-titles {
+    margin-bottom: 25px !important;
+    transform: none !important;
+  }
+  .hero-title-main {
+    font-size: 2.8rem !important;
+    letter-spacing: 3px !important;
+    line-height: 1 !important;
+    transform: none !important; /* Reset desktop offset */
+    margin: 0 auto !important;
+  }
+  .hero-title-line {
+    width: 140px !important;
+    height: 2px !important;
+    margin: 8px auto !important;
+  }
+  .hero-title-sub {
+    font-size: 1.6rem !important;
+    letter-spacing: 4px !important;
+    line-height: 1 !important;
+    transform: none !important; /* Reset desktop offset */
+    margin: 0 auto !important;
+  }
+
+  /* 3. SERVICES LINE -> ELEGANT TAG PILLS */
+  .services-line {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    margin: 20px auto 30px !important;
+    padding: 0 10px !important;
+  }
+  .services-line span:not(.separator) {
+    background: #f0f7fc !important;
+    color: var(--brand-blue) !important;
+    border: 1px solid #e0effe !important;
+    padding: 6px 14px !important;
+    border-radius: 20px !important;
+    font-size: 0.78rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.5px !important;
+    text-transform: uppercase !important;
+  }
+  .services-line .separator {
+    display: none !important; /* Hide dots on mobile */
+  }
+
+  /* 4. HERO BUTTONS -> SLEEK COMPACT ACTION PILLS */
+  .hero-buttons {
+    flex-direction: column !important;
+    gap: 10px !important;
+    width: 100% !important;
+    max-width: 290px !important;
+    margin: 0 auto !important;
+  }
+  .btn {
+    width: 100% !important;
+    padding: 12px 20px !important;
+    font-size: 0.85rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.8px !important;
+    border-radius: 30px !important;
+    box-shadow: 0 4px 14px rgba(0, 114, 188, 0.12) !important;
+  }
+
+  /* 5. BRANDS SECTION & BRAND NAME TAGS */
+  .brands-wrapper {
+    padding-top: 15px !important;
+    padding-bottom: 10px !important;
+  }
+  .brands-title {
+    font-size: 0.85rem !important;
+    letter-spacing: 2px !important;
+    margin-bottom: 18px !important;
+  }
+  .brands-ticker-layout {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 0 4px !important;
+  }
+  .ticker-container {
+    width: 82% !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    scroll-behavior: smooth !important;
+    padding: 10px 0 15px !important;
+    -ms-overflow-style: none !important;
+    scrollbar-width: none !important;
+  }
+  .ticker-container::-webkit-scrollbar {
+    display: none !important;
+  }
+  .ticker-container::before,
+  .ticker-container::after {
+    display: none !important;
+  }
+  .ticker-track {
+    animation: none !important;
+    display: flex !important;
+    gap: 12px !important;
+    width: max-content !important;
+  }
+  /* Hide duplicate items on mobile slider */
+  .ticker-item:nth-child(n+7) {
+    display: none !important;
+  }
+  .ticker-item {
+    flex: 0 0 240px !important;
+    scroll-snap-align: center !important;
+    margin: 0 !important;
+    padding: 16px 12px !important;
+    background: #ffffff !important;
+    border-radius: 12px !important;
+    border: 1px solid #e2e8f0 !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+  }
+  .logo-box {
+    height: 65px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transform: none !important;
+    filter: none !important;
+    opacity: 1 !important;
+  }
+  .logo-box img {
+    max-height: 52px !important;
+    max-width: 170px !important;
+    object-fit: contain !important;
+  }
+
+  /* BRAND NAME TAG UNDER LOGO (Pill Badge) */
+  .hover-tag {
+    display: block !important;
+    position: static !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    margin-top: 10px !important;
+    background: #f0f7fc !important;
+    color: #0072bc !important;
+    font-size: 0.78rem !important;
+    font-weight: 600 !important;
+    padding: 5px 12px !important;
+    border-radius: 6px !important;
+    border: 1px solid #e0effe !important;
+    box-shadow: none !important;
+    white-space: normal !important;
+    text-align: center !important;
+    width: 100% !important;
+    line-height: 1.35 !important;
+  }
+
+  .ticker-arrow {
+    display: flex !important;
+    background: #ffffff !important;
+    color: #0072bc !important;
+    border: 1px solid #cbd5e1 !important;
+    width: 34px !important;
+    height: 34px !important;
+    border-radius: 50% !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1rem !important;
+    cursor: pointer !important;
+    z-index: 10 !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+  }
+  .ticker-arrow:active {
+    background: #0072bc !important;
+    color: #ffffff !important;
+  }
+
+  /* 6. MOBILE NAV OVERLAY (Clean App Drawer) */
   .mobile-nav-overlay {
     display: block !important;
     position: fixed !important;
@@ -1182,12 +1364,8 @@ a {
     border-radius: 6px !important;
     line-height: 1.4 !important;
   }
-  .mobile-nav-dropdown-content a:active {
-    color: var(--brand-blue) !important;
-    background: #e0f2fe !important;
-  }
 
-  /* MOBILE FABS (Fixed Action Buttons) */
+  /* 7. MOBILE FABS (Floating Action Buttons) */
   .mobile-fabs {
     display: flex !important;
     flex-direction: column !important;
@@ -1208,7 +1386,6 @@ a {
     color: #ffffff !important;
     text-decoration: none !important;
     box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2) !important;
-    transition: transform 0.2s !important;
   }
   .fab-phone {
     background: #0072bc !important;
@@ -1216,157 +1393,21 @@ a {
   .fab-whatsapp {
     background: #25d366 !important;
   }
-  .fab-btn:active {
-    transform: scale(0.9) !important;
-  }
 
-  /* BRANDS TICKER & BRAND NAMES UNDER LOGOS */
-  .brands-wrapper {
-    padding-top: 20px !important;
-    padding-bottom: 15px !important;
-  }
-  .brands-title {
-    font-size: 0.85rem !important;
-    letter-spacing: 2px !important;
-    margin-bottom: 18px !important;
-  }
-  .brands-ticker-layout {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important;
-    padding: 0 4px !important;
-  }
-  .ticker-container {
-    width: 82% !important;
-    overflow-x: auto !important;
-    scroll-snap-type: x mandatory !important;
-    scroll-behavior: smooth !important;
-    padding: 10px 0 15px !important;
-    -ms-overflow-style: none !important;
-    scrollbar-width: none !important;
-  }
-  .ticker-container::-webkit-scrollbar {
-    display: none !important;
-  }
-  .ticker-container::before,
-  .ticker-container::after {
-    display: none !important;
-  }
-  .ticker-track {
-    animation: none !important;
-    display: flex !important;
-    gap: 12px !important;
-    width: max-content !important;
-  }
-  /* Hide duplicate items on mobile slider */
-  .ticker-item:nth-child(n+7) {
-    display: none !important;
-  }
-  .ticker-item {
-    flex: 0 0 240px !important;
-    scroll-snap-align: center !important;
-    margin: 0 !important;
-    padding: 16px 12px !important;
-    background: #ffffff !important;
-    border-radius: 12px !important;
-    border: 1px solid #e2e8f0 !important;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04) !important;
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: center !important;
-    justify-content: center !important;
-    position: relative !important;
-  }
-  .logo-box {
-    height: 70px !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    transform: none !important;
-    filter: none !important;
-    opacity: 1 !important;
-  }
-  .logo-box img {
-    max-height: 55px !important;
-    max-width: 170px !important;
-    object-fit: contain !important;
-  }
-
-  /* BRAND NAME TAG UNDER LOGO (Fixed & Always Visible on Mobile) */
-  .hover-tag {
-    display: block !important;
-    position: static !important;
-    opacity: 1 !important;
-    visibility: visible !important;
-    transform: none !important;
-    margin-top: 10px !important;
-    background: #f0f7fc !important;
-    color: #0072bc !important;
-    font-size: 0.78rem !important;
-    font-weight: 600 !important;
-    padding: 5px 12px !important;
-    border-radius: 6px !important;
-    border: 1px solid #e0effe !important;
-    box-shadow: none !important;
-    white-space: normal !important;
-    text-align: center !important;
-    width: 100% !important;
-    line-height: 1.35 !important;
-  }
-
-  /* ARROWS FOR BRAND SLIDER */
-  .ticker-arrow {
-    display: flex !important;
-    background: #ffffff !important;
-    color: #0072bc !important;
-    border: 1px solid #cbd5e1 !important;
-    width: 34px !important;
-    height: 34px !important;
-    border-radius: 50% !important;
-    align-items: center !important;
-    justify-content: center !important;
-    font-size: 1rem !important;
-    cursor: pointer !important;
-    z-index: 10 !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
-  }
-  .ticker-arrow:active {
-    background: #0072bc !important;
-    color: #ffffff !important;
-  }
-
-  /* GENERAL MOBILE TYPOGRAPHY & SPACING FIXES */
+  /* 8. GENERAL MOBILE FIXES */
   body, p, h1, h2, h3, h4, h5, h6 {
     overflow-wrap: break-word;
-    word-break: normal; /* Normal natural word wrapping */
+    word-break: normal;
   }
 
   .container {
     padding: 0 16px !important;
   }
-  .hero-container {
-    padding-top: 100px !important;
-  }
-  .hero-title-main {
-    font-size: 2.2rem !important;
-    letter-spacing: 4px !important;
-  }
-  .hero-title-sub {
-    font-size: 1.1rem !important;
-    letter-spacing: 6px !important;
-  }
-  .services-line {
-    font-size: 0.75rem !important;
-    gap: 8px !important;
-    line-height: 1.6 !important;
-    margin: 25px 0 !important;
-  }
-
   .page-section {
-    padding: 30px 0 !important;
+    padding: 25px 0 !important;
   }
   .page-main-content {
-    padding: 40px 16px !important;
+    padding: 35px 16px !important;
   }
   .page-main-title {
     font-size: 1.8rem !important;
@@ -1387,12 +1428,12 @@ a {
     padding: 15px 0 !important;
   }
   .hero-slogan-text {
-    font-size: 1.25rem !important;
+    font-size: 1.2rem !important;
     letter-spacing: 0.5px !important;
   }
 
   .contact-section {
-    padding: 35px 0 !important;
+    padding: 30px 0 !important;
   }
   .contact-title {
     font-size: 1.4rem !important;
@@ -1400,11 +1441,14 @@ a {
   .contact-buttons {
     flex-direction: column !important;
     gap: 10px !important;
+    max-width: 290px !important;
+    margin: 0 auto !important;
   }
   .contact-btn {
     width: 100% !important;
     padding: 12px 20px !important;
-    font-size: 0.95rem !important;
+    font-size: 0.88rem !important;
+    border-radius: 30px !important;
   }
 
   .footer {
