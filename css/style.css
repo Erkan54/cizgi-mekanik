@@ -561,9 +561,11 @@ a {
 .hero-slogan-inline {
   text-align: center;
   margin-top: -45px;
-  padding-top: 80px; /* Geçişin yumuşak olması için üstten boşluk */
-  padding-bottom: 35px;
+  padding-top: 60px; /* Geçişin yumuşak olması için üstten boşluk */
+  padding-bottom: 20px;
   background: linear-gradient(to bottom, rgba(238, 245, 252, 0) 0%, rgba(238, 245, 252, 0.75) 100%); /* Alt kısımla bütünleşen geçiş efekti */
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
   position: relative;
   z-index: 5;
 }
@@ -585,7 +587,7 @@ a {
   background: rgba(238, 245, 252, 0.75); /* Daha mavi tonlarında ve saydam arkaplan */
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  padding: 40px 0 60px;
+  padding: 40px 0 100px;
 }
 
 .contact-layout {
@@ -739,7 +741,7 @@ a {
    FOOTER
    ========================================================================== */
 .footer {
-  padding: 20px 0; /* Footer yukarı çekildi */
+  padding: 34px 0; /* Footer 3px daha büyütüldü (1.5px alt ve üste eklendi) */
   text-align: center;
   font-size: 0.78rem;
   font-weight: 500;
