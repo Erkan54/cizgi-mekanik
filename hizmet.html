@@ -45,8 +45,49 @@
         </div>
         <a href="index.html#iletisim">İletişim</a>
       </nav>
+      <button class="mobile-menu-btn" aria-label="Menüyü Aç">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </div>
   </header>
+
+  <!-- ================================================================
+       MOBILE NAV OVERLAY (Sadece Mobilde)
+       ================================================================ -->
+  <div class="mobile-nav-overlay">
+    <div class="mobile-nav-close">
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+    <div class="mobile-nav-content">
+      <a href="index.html" class="mobile-nav-link">Ana Sayfa</a>
+      <a href="hakkimizda.html" class="mobile-nav-link">Hakkımızda</a>
+      
+      <div class="mobile-nav-dropdown">
+        <span class="mobile-nav-dropdown-title">Hizmetlerimiz <i class="fa-solid fa-chevron-down"></i></span>
+        <div class="mobile-nav-dropdown-content">
+          <a href="hizmet.html?tip=havalandirma">Sakarya Isıtma, Soğutma ve Havalandırma</a>
+          <a href="hizmet.html?tip=yangin">Sakarya Yangın Tesisatı ve İzolasyon</a>
+          <a href="hizmet.html?tip=su">Sakarya Temiz ve Pis Su Tesisatı</a>
+          <a href="hizmet.html?tip=kombi">Sakarya Kalorifer, Kombi ve Yerden Isıtma</a>
+          <a href="hizmet.html?tip=celik">Sakarya Hafif Çelik Platform İşleri</a>
+        </div>
+      </div>
+      
+      <a href="index.html#iletisim" class="mobile-nav-link">İletişim</a>
+    </div>
+  </div>
+
+  <!-- ================================================================
+       MOBILE FAB BUTTONS (Sadece Mobilde)
+       ================================================================ -->
+  <div class="mobile-fabs">
+    <a href="tel:05322884594" class="fab-btn fab-phone" aria-label="Hemen Arayın">
+      <i class="fa-solid fa-phone"></i>
+    </a>
+    <a href="https://wa.me/905322884594" class="fab-btn fab-whatsapp" aria-label="WhatsApp İletişim">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </div>
 
   <main style="padding: 100px 0; max-width: 800px; margin: 0 auto; text-align: center;">
     <h1 id="hizmet-title" style="font-family: var(--font-sans); font-weight: 900; font-size: 2.5rem; color: var(--text-dark); margin-bottom: 20px;">Mekanik Tesisat Çözümleri</h1>

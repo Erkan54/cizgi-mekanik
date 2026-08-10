@@ -49,8 +49,49 @@
         </div>
         <a href="index.html#iletisim">İletişim</a>
       </nav>
+      <button class="mobile-menu-btn" aria-label="Menüyü Aç">
+        <i class="fa-solid fa-bars"></i>
+      </button>
     </div>
   </header>
+
+  <!-- ================================================================
+       MOBILE NAV OVERLAY (Sadece Mobilde)
+       ================================================================ -->
+  <div class="mobile-nav-overlay">
+    <div class="mobile-nav-close">
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+    <div class="mobile-nav-content">
+      <a href="index.html" class="mobile-nav-link">Ana Sayfa</a>
+      <a href="hakkimizda.html" class="mobile-nav-link">Hakkımızda</a>
+      
+      <div class="mobile-nav-dropdown">
+        <span class="mobile-nav-dropdown-title">Hizmetlerimiz <i class="fa-solid fa-chevron-down"></i></span>
+        <div class="mobile-nav-dropdown-content">
+          <a href="hizmet.html?tip=havalandirma">Sakarya Isıtma, Soğutma ve Havalandırma</a>
+          <a href="hizmet.html?tip=yangin">Sakarya Yangın Tesisatı ve İzolasyon</a>
+          <a href="hizmet.html?tip=su">Sakarya Temiz ve Pis Su Tesisatı</a>
+          <a href="hizmet.html?tip=kombi">Sakarya Kalorifer, Kombi ve Yerden Isıtma</a>
+          <a href="hizmet.html?tip=celik">Sakarya Hafif Çelik Platform İşleri</a>
+        </div>
+      </div>
+      
+      <a href="index.html#iletisim" class="mobile-nav-link">İletişim</a>
+    </div>
+  </div>
+
+  <!-- ================================================================
+       MOBILE FAB BUTTONS (Sadece Mobilde)
+       ================================================================ -->
+  <div class="mobile-fabs">
+    <a href="tel:05322884594" class="fab-btn fab-phone" aria-label="Hemen Arayın">
+      <i class="fa-solid fa-phone"></i>
+    </a>
+    <a href="https://wa.me/905322884594" class="fab-btn fab-whatsapp" aria-label="WhatsApp İletişim">
+      <i class="fa-brands fa-whatsapp"></i>
+    </a>
+  </div>
 
   <!-- ================================================================
        SAYFA 1: HERO & HİZMETLER & MARKALAR
@@ -91,8 +132,10 @@
         <h2 class="brands-title">Çalıştığımız Markalar</h2>
       </div>
       
-      <div class="ticker-container">
-        <div class="ticker-track">
+      <div class="brands-ticker-layout">
+        <button class="ticker-arrow prev" aria-label="Önceki"><i class="fa-solid fa-chevron-left"></i></button>
+        <div class="ticker-container">
+          <div class="ticker-track">
           <!-- Logo 1: SEAH -->
           <div class="ticker-item">
             <div class="logo-box">
@@ -180,6 +223,7 @@
           </div>
         </div>
       </div>
+      <button class="ticker-arrow next" aria-label="Sonraki"><i class="fa-solid fa-chevron-right"></i></button>
     </div>
     
     <!-- Ana Slogan -->
