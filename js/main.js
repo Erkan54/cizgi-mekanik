@@ -138,14 +138,17 @@ function initMobileTicker() {
 
   if (!container || !prevBtn || !nextBtn) return;
 
-  const scrollAmount = 300; // approximate width of one item
+  const getScrollAmount = () => {
+    const card = container.querySelector('.ticker-item');
+    return card ? card.offsetWidth + 15 : 255;
+  };
 
   prevBtn.addEventListener('click', () => {
-    container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+    container.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
   });
 
   nextBtn.addEventListener('click', () => {
-    container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+    container.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
   });
 
   // Simple auto scroll for mobile
