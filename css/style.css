@@ -560,9 +560,9 @@ a {
 
 .hero-slogan-inline {
   text-align: center;
-  margin-top: -20px;
-  padding-top: 50px; /* Geçişin yumuşak olması için üstten boşluk */
-  padding-bottom: 25px;
+  margin-top: -45px;
+  padding-top: 80px; /* Geçişin yumuşak olması için üstten boşluk */
+  padding-bottom: 35px;
   background: linear-gradient(to bottom, rgba(238, 245, 252, 0) 0%, rgba(238, 245, 252, 0.75) 100%); /* Alt kısımla bütünleşen geçiş efekti */
   position: relative;
   z-index: 5;
@@ -585,7 +585,7 @@ a {
   background: rgba(238, 245, 252, 0.75); /* Daha mavi tonlarında ve saydam arkaplan */
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  padding: 25px 0 100px;
+  padding: 100px 0;
 }
 
 .contact-layout {
@@ -791,32 +791,444 @@ a {
 /* ==========================================================================
    RESPONSIVE
    ========================================================================== */
-@media (max-width: 992px) {
-  .contact-layout {
-    grid-template-columns: 1fr;
-    gap: 50px;
-    padding: 30px;
-  }
+/* ==========================================================================
+   DESKTOP DEFAULT HIDE FOR MOBILE COMPONENTS
+   ========================================================================== */
+.mobile-menu-btn {
+  display: none;
 }
 
-@media (max-width: 768px) {
-  .hero-title {
-    font-size: 3.2rem;
+.mobile-nav-overlay {
+  display: none;
+}
+
+.mobile-fabs {
+  display: none;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (Max-Width: 992px)
+   ========================================================================== */
+@media (max-width: 992px) {
+  /* 1. Global & Overflow Cleans */
+  html, body {
+    overflow-x: hidden !important;
+    width: 100% !important;
+    word-break: break-word;
   }
-  .services-line {
+
+  .container,
+  .container-wide,
+  .page-main-content {
+    max-width: 100% !important;
+    padding-left: 18px !important;
+    padding-right: 18px !important;
+    box-sizing: border-box !important;
+  }
+
+  .page-section {
+    padding: 95px 0 50px !important;
+  }
+
+  /* 2. Header & Logo & Navigation */
+  .header {
+    padding: 10px 0 !important;
+  }
+
+  .header-inner {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+  }
+
+  .nav-links {
+    display: none !important;
+  }
+
+  .mobile-menu-btn {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    background: rgba(0, 114, 188, 0.08);
+    border: 1px solid rgba(0, 114, 188, 0.2);
+    border-radius: 10px;
+    color: var(--brand-blue);
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: var(--transition-fast);
+  }
+
+  .mobile-menu-btn:active {
+    transform: scale(0.92);
+    background: var(--brand-blue);
+    color: #ffffff;
+  }
+
+  .logo {
+    margin-left: 0 !important;
+  }
+
+  .logo-text-top {
+    font-size: 1.1rem !important;
+    letter-spacing: 2.5px !important;
+  }
+
+  .logo-divider {
+    margin: 1px 0 !important;
+    height: 1.5px !important;
+  }
+
+  .logo-text-bottom {
+    font-size: 0.65rem !important;
+    letter-spacing: 3.5px !important;
+  }
+
+  /* 3. Fullscreen Mobile Overlay Menu (.mobile-nav-overlay) */
+  .mobile-nav-overlay {
+    display: flex !important;
+    position: fixed !important;
+    top: 0;
+    right: -100%;
+    width: 100%;
+    height: 100vh;
+    background: rgba(10, 25, 47, 0.98);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    z-index: 99999;
+    flex-direction: column;
+    padding: 20px 24px;
+    transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    overflow-y: auto;
+    box-sizing: border-box;
+  }
+
+  .mobile-nav-overlay.open,
+  .mobile-nav-overlay.active {
+    right: 0 !important;
+  }
+
+  .mobile-nav-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .mobile-nav-close {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.12);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border: none;
+    transition: var(--transition-fast);
+  }
+
+  .mobile-nav-close:active {
+    background: rgba(255, 255, 255, 0.25);
+    transform: scale(0.9);
+  }
+
+  .mobile-nav-links {
+    display: flex;
     flex-direction: column;
     gap: 12px;
   }
+
+  .mobile-nav-link {
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    padding: 14px 18px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-decoration: none;
+    transition: var(--transition-fast);
+  }
+
+  .mobile-nav-link:active {
+    background: rgba(0, 114, 188, 0.3);
+    color: #00a3e0;
+  }
+
+  .mobile-nav-dropdown-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding-left: 12px;
+    margin-top: 6px;
+  }
+
+  .mobile-nav-dropdown-content a {
+    color: #cbd5e1;
+    font-size: 0.9rem;
+    font-weight: 500;
+    padding: 10px 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 6px;
+    text-decoration: none;
+    display: block;
+    transition: var(--transition-fast);
+  }
+
+  .mobile-nav-dropdown-content a:active {
+    color: #ffffff;
+    background: rgba(0, 114, 188, 0.25);
+  }
+
+  /* 4. Hero Section, Typography & Action Buttons */
+  .hero-container {
+    padding-top: 0 !important;
+    margin-bottom: 20px !important;
+  }
+
+  .hero-titles {
+    margin-bottom: 20px !important;
+  }
+
+  .hero-title-main {
+    font-size: 3.2rem !important;
+    letter-spacing: 0.04em !important;
+    transform: none !important;
+    line-height: 1 !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+
+  .hero-title-line {
+    width: 160px !important;
+    margin: 10px auto !important;
+  }
+
+  .hero-title-sub {
+    font-size: 2.1rem !important;
+    letter-spacing: 0.06em !important;
+    transform: none !important;
+    line-height: 1 !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+  }
+
+  .hero-slogan-inline {
+    margin-top: 0 !important;
+    padding-top: 35px !important;
+    padding-bottom: 25px !important;
+  }
+
+  .hero-slogan-text {
+    font-size: 2rem !important;
+    line-height: 1.35 !important;
+    padding: 0 10px !important;
+  }
+
+  .services-line {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    margin: 0 auto 30px !important;
+  }
+
   .services-line .separator {
-    display: none;
+    display: none !important;
   }
-  .preloader-title-main {
-    font-size: 3.2rem;
-    transform: translateX(-20px);
+
+  .services-line span:not(.separator) {
+    background: rgba(0, 114, 188, 0.08) !important;
+    border: 1px solid rgba(0, 114, 188, 0.2) !important;
+    padding: 6px 14px !important;
+    border-radius: 20px !important;
+    font-size: 0.82rem !important;
+    color: var(--brand-blue) !important;
+    display: inline-block !important;
+    letter-spacing: 0.5px !important;
   }
-  .preloader-title-sub {
-    font-size: 2rem;
-    transform: translateX(25px);
+
+  .hero-buttons,
+  .contact-buttons {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+
+  .btn,
+  .btn-primary,
+  .btn-outline,
+  .contact-btn {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 14px 20px !important;
+    font-size: 0.9rem !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+  }
+
+  /* 5. Brands Slider & Touch Scroll */
+  .brands-wrapper {
+    padding-top: 15px !important;
+    padding-bottom: 15px !important;
+  }
+
+  .ticker-container {
+    width: 100% !important;
+    overflow-x: auto !important;
+    scroll-snap-type: x mandatory !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding: 15px 0 25px !important;
+  }
+
+  .ticker-container::before,
+  .ticker-container::after {
+    display: none !important;
+  }
+
+  .ticker-track,
+  .brands-ticker-track {
+    animation: none !important;
+    width: max-content !important;
+    display: flex !important;
+    gap: 12px !important;
+  }
+
+  .ticker-item {
+    scroll-snap-align: center !important;
+    flex-shrink: 0 !important;
+    margin: 0 8px !important;
+    width: 160px !important;
+    min-width: 160px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .logo-box {
+    height: 100px !important;
+  }
+
+  .logo-box img {
+    max-height: 80px !important;
+    max-width: 130px !important;
+  }
+
+  .hover-tag {
+    opacity: 1 !important;
+    visibility: visible !important;
+    position: relative !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
+    margin-top: 8px !important;
+    font-size: 0.72rem !important;
+    padding: 5px 12px !important;
+    white-space: normal !important;
+    text-align: center !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  /* 6. Page Layouts & Contact Section */
+  .contact-section {
+    padding: 50px 0 !important;
+  }
+
+  .contact-layout,
+  .services-info-grid {
+    grid-template-columns: 1fr !important;
+    gap: 30px !important;
+    padding: 0 !important;
+  }
+
+  .contact-left-panel {
+    width: 100% !important;
+  }
+
+  .contact-title {
+    font-size: 1.75rem !important;
+    text-align: center !important;
+    line-height: 1.3 !important;
+  }
+
+  .contact-title-line {
+    margin: 12px auto 25px !important;
+  }
+
+  .contact-map-wrapper {
+    width: 100% !important;
+    border-radius: 12px !important;
+    padding: 6px !important;
+    box-sizing: border-box !important;
+  }
+
+  .contact-map {
+    height: 320px !important;
+    border-radius: 8px !important;
+  }
+
+  /* 7. Mobile Floating Action Buttons (FABs) */
+  .mobile-fabs {
+    display: flex !important;
+    position: fixed !important;
+    bottom: 20px !important;
+    right: 18px !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    z-index: 9999 !important;
+  }
+
+  .fab-btn {
+    width: 52px !important;
+    height: 52px !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: #ffffff !important;
+    font-size: 1.35rem !important;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.28) !important;
+    text-decoration: none !important;
+    transition: transform 0.2s ease !important;
+  }
+
+  .fab-btn:active {
+    transform: scale(0.9) !important;
+  }
+
+  .fab-btn.whatsapp {
+    background-color: #25d366 !important;
+  }
+
+  .fab-btn.phone {
+    background-color: var(--brand-blue) !important;
+  }
+
+  /* 8. Footer Mobile Adjustments */
+  .footer {
+    padding: 25px 0 !important;
+  }
+
+  .footer-inner {
+    flex-direction: column !important;
+    gap: 12px !important;
+    text-align: center !important;
+  }
+
+  .footer-right {
+    flex-direction: column !important;
+    gap: 8px !important;
   }
 }
 
@@ -961,455 +1373,11 @@ a {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.4s ease 0.3s, transform 0.4s ease 0.3s;
-}
-
-/* Base styles for page-main-content & services-info-grid (Desktop + Mobile) */
-.page-main-content {
-  padding: 80px 20px;
-  max-width: 900px;
-  margin: 0 auto;
   text-align: center;
-}
-.page-main-title {
-  font-family: var(--font-sans);
-  font-weight: 900;
-  font-size: 2.6rem;
-  color: var(--text-dark);
-  margin-bottom: 20px;
-  letter-spacing: -0.5px;
-}
-.page-main-desc {
-  font-size: 1.1rem;
-  color: var(--text-medium);
-  line-height: 1.8;
-  margin-bottom: 35px;
-}
-.services-info-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-  text-align: left;
-}
-.service-info-card {
-  background: #ffffff;
-  padding: 28px;
-  border-radius: 12px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-}
-.service-info-card-title {
-  font-size: 1.2rem;
-  color: var(--brand-blue);
-  margin-bottom: 10px;
-  font-weight: 700;
-}
-.service-info-card-desc {
-  font-size: 0.95rem;
-  color: var(--text-medium);
-  line-height: 1.6;
+  padding: 0 20px;
 }
 
-
-/* ==========================================================================
-   MOBILE & RESPONSIVE DESIGN (Max Width: 992px) - FRESH CUSTOM DESIGN
-   ========================================================================== */
-
-.mobile-menu-btn {
-  display: none;
-  background: transparent;
-  border: none;
-  color: #0f172a;
-  font-size: 1.8rem;
-  cursor: pointer;
-  z-index: 1000;
-  padding: 5px;
-}
-.mobile-nav-overlay {
-  display: none;
-}
-.mobile-fabs {
-  display: none;
-}
-.ticker-arrow {
-  display: none;
-}
-
-.brands-ticker-layout {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  width: 100%;
-}
-
-@media (max-width: 992px) {
-  html {
-    font-size: 16px;
-  }
-  
-  body {
-    overflow-x: hidden;
-  }
-
-  /* 1. HEADER & LOGO */
-  .header {
-    padding: 12px 0;
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  }
-  .header-inner {
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .nav-links {
-    display: none;
-  }
-  .mobile-menu-btn {
-    display: flex;
-  }
-  
-  .logo {
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .logo-text-top {
-    font-size: 1.5rem;
-    letter-spacing: 2px;
-    line-height: 1.1;
-  }
-  .logo-divider {
-    display: none;
-  }
-  .logo-text-bottom {
-    font-size: 0.85rem;
-    letter-spacing: 3px;
-    line-height: 1.1;
-  }
-
-  /* 2. HERO SECTION */
-  .hero-container {
-    padding-top: 100px;
-    padding-bottom: 40px;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-  
-  .hero-titles {
-    margin-bottom: 30px;
-    transform: none;
-  }
-  
-  .hero-title-main {
-    font-size: 3.5rem;
-    letter-spacing: 2px;
-    margin: 0;
-    transform: none;
-    line-height: 1;
-    text-shadow: 2px 4px 10px rgba(0,0,0,0.1);
-  }
-  
-  .hero-title-line {
-    width: 80px;
-    height: 4px;
-    background: var(--brand-blue);
-    margin: 15px auto;
-    border-radius: 2px;
-  }
-  
-  .hero-title-sub {
-    font-size: 1.8rem;
-    letter-spacing: 6px;
-    margin: 0;
-    transform: none;
-    line-height: 1.2;
-    color: var(--text-dark);
-  }
-
-  /* 3. SERVICES PILLS */
-  .services-line {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    margin: 20px 0 40px;
-    padding: 0 15px;
-  }
-  .services-line span:not(.separator) {
-    background: linear-gradient(135deg, #f8fafc, #f1f5f9);
-    color: var(--brand-blue);
-    padding: 8px 16px;
-    border-radius: 25px;
-    font-size: 0.85rem;
-    font-weight: 700;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
-    border: 1px solid rgba(0,114,188,0.1);
-  }
-  .services-line .separator {
-    display: none;
-  }
-
-  /* 4. SLEEK BUTTONS */
-  .hero-buttons {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    max-width: 320px;
-    gap: 15px;
-  }
-  .btn {
-    width: 100%;
-    padding: 16px 20px;
-    border-radius: 12px;
-    font-size: 1rem;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-  }
-  .btn:active {
-    transform: scale(0.98);
-  }
-  .btn-primary {
-    box-shadow: 0 8px 20px rgba(0, 114, 188, 0.25);
-  }
-  .btn-outline {
-    background: rgba(255,255,255,0.9);
-    border: 2px solid var(--brand-blue);
-    color: var(--brand-blue);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  }
-
-  /* 5. BRANDS SLIDER */
-  .brands-wrapper {
-    padding: 40px 0;
-    background: #f8fafc;
-  }
-  .brands-title {
-    font-size: 1.5rem;
-    text-align: center;
-    margin-bottom: 25px;
-    font-weight: 800;
-  }
-  .brands-ticker-layout {
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding: 0 10px;
-  }
-  
-  .ticker-arrow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: #ffffff;
-    color: var(--brand-blue);
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-    font-size: 1.2rem;
-    z-index: 10;
-    flex-shrink: 0;
-    cursor: pointer;
-  }
-  .ticker-arrow:active {
-    background: var(--brand-blue);
-    color: #fff;
-  }
-  
-  .ticker-container {
-    flex: 1;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    padding: 10px 5px;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-  }
-  .ticker-container::-webkit-scrollbar {
-    display: none;
-  }
-  .ticker-track {
-    animation: none;
-    display: flex;
-    gap: 15px;
-    width: max-content;
-  }
-  .ticker-item {
-    scroll-snap-align: center;
-    flex: 0 0 260px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background: #fff;
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.05);
-    border: 1px solid #f1f5f9;
-  }
-  .logo-box {
-    height: 70px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .logo-box img {
-    max-height: 50px;
-    max-width: 180px;
-    object-fit: contain;
-  }
-  .hover-tag {
-    display: block;
-    position: relative;
-    opacity: 1;
-    visibility: visible;
-    transform: none;
-    background: transparent;
-    color: var(--text-dark);
-    font-size: 0.95rem;
-    font-weight: 700;
-    text-align: center;
-    margin-top: 15px;
-    box-shadow: none;
-    border: none;
-    white-space: normal;
-    line-height: 1.4;
-  }
-
-  /* 6. DISTINCT MOBILE SANDWICH MENU */
-  .mobile-nav-overlay {
-    display: block;
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 100vw;
-    height: 100vh;
-    background: linear-gradient(145deg, #0f172a, #1e293b);
-    z-index: 99999;
-    transition: right 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-    padding: 80px 30px 40px;
-    overflow-y: auto;
-  }
-  .mobile-nav-overlay.open {
-    right: 0;
-  }
-  .mobile-nav-close {
-    position: absolute;
-    top: 25px;
-    right: 25px;
-    color: #fff;
-    font-size: 2rem;
-    cursor: pointer;
-  }
-  .mobile-nav-content {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-  .mobile-nav-link, .mobile-nav-dropdown-title {
-    color: #fff;
-    font-size: 1.5rem;
-    font-weight: 800;
-    text-decoration: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding-bottom: 10px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
-  .mobile-nav-dropdown-content {
-    display: none;
-    flex-direction: column;
-    gap: 15px;
-    padding-top: 15px;
-    padding-left: 15px;
-  }
-  .mobile-nav-dropdown-content.open {
-    display: flex;
-  }
-  .mobile-nav-dropdown-content a {
-    color: #94a3b8;
-    font-size: 1.1rem;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s;
-  }
-  .mobile-nav-dropdown-content a:active {
-    color: #fff;
-  }
-
-  /* 7. FLOATING ACTION BUTTONS (FAB) */
-  .mobile-fabs {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    position: fixed;
-    bottom: 25px;
-    right: 20px;
-    z-index: 900;
-  }
-  .fab-btn {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.5rem;
-    color: #fff;
-    text-decoration: none;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-    transition: transform 0.2s;
-  }
-  .fab-btn:active {
-    transform: scale(0.9);
-  }
-  .fab-phone { background: #0072bc; }
-  .fab-whatsapp { background: #25d366; }
-
-  /* 8. OTHER FIXES */
-  .page-main-content {
-    padding: 50px 20px;
-  }
-  .page-main-title {
-    font-size: 2.2rem;
-  }
-  .services-info-grid {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  .contact-section {
-    padding: 50px 20px;
-  }
-  .contact-title {
-    font-size: 1.8rem;
-  }
-  .contact-buttons {
-    flex-direction: column;
-    width: 100%;
-    gap: 15px;
-  }
-  .contact-btn {
-    width: 100%;
-    padding: 16px;
-    font-size: 1rem;
-    border-radius: 12px;
-  }
-  .footer-inner {
-    flex-direction: column;
-    text-align: center;
-    gap: 20px;
-  }
+.page-transition-overlay.active .transition-slogan {
+  opacity: 1;
+  transform: translateY(0);
 }

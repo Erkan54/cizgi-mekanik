@@ -45,25 +45,29 @@
         </div>
         <a href="index.html#iletisim">İletişim</a>
       </nav>
-      <button class="mobile-menu-btn" aria-label="Menüyü Aç">
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü">
         <i class="fa-solid fa-bars"></i>
       </button>
     </div>
   </header>
 
-  <!-- ================================================================
-       MOBILE NAV OVERLAY (Sadece Mobilde)
-       ================================================================ -->
-  <div class="mobile-nav-overlay">
-    <div class="mobile-nav-close">
-      <i class="fa-solid fa-xmark"></i>
+  <!-- MOBILE NAV OVERLAY -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay">
+    <div class="mobile-nav-header">
+      <a href="index.html" class="logo">
+        <span class="logo-text-top" style="color: #ffffff;">ÇİZGİ</span>
+        <span class="logo-divider"></span>
+        <span class="logo-text-bottom">MEKANİK</span>
+      </a>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Kapat">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
     </div>
-    <div class="mobile-nav-content">
-      <a href="index.html" class="mobile-nav-link">Ana Sayfa</a>
-      <a href="hakkimizda.html" class="mobile-nav-link">Hakkımızda</a>
-      
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Ana Sayfa <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem;"></i></a>
+      <a href="hakkimizda.html" class="mobile-nav-link">Hakkımızda <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem;"></i></a>
       <div class="mobile-nav-dropdown">
-        <span class="mobile-nav-dropdown-title">Hizmetlerimiz <i class="fa-solid fa-chevron-down"></i></span>
+        <div class="mobile-nav-link" style="cursor: pointer;">Hizmetlerimiz <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem;"></i></div>
         <div class="mobile-nav-dropdown-content">
           <a href="hizmet.html?tip=havalandirma">Sakarya Isıtma, Soğutma ve Havalandırma</a>
           <a href="hizmet.html?tip=yangin">Sakarya Yangın Tesisatı ve İzolasyon</a>
@@ -72,37 +76,34 @@
           <a href="hizmet.html?tip=celik">Sakarya Hafif Çelik Platform İşleri</a>
         </div>
       </div>
-      
-      <a href="index.html#iletisim" class="mobile-nav-link">İletişim</a>
+      <a href="index.html#iletisim" class="mobile-nav-link">İletişim <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem;"></i></a>
     </div>
   </div>
 
-  <!-- ================================================================
-       MOBILE FAB BUTTONS (Sadece Mobilde)
-       ================================================================ -->
+  <!-- MOBILE FABs -->
   <div class="mobile-fabs">
-    <a href="tel:05322884594" class="fab-btn fab-phone" aria-label="Hemen Arayın">
-      <i class="fa-solid fa-phone"></i>
-    </a>
-    <a href="https://wa.me/905322884594" class="fab-btn fab-whatsapp" aria-label="WhatsApp İletişim">
+    <a href="https://wa.me/905322884594" class="fab-btn whatsapp" aria-label="WhatsApp">
       <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a href="tel:05322884594" class="fab-btn phone" aria-label="Telefon">
+      <i class="fa-solid fa-phone"></i>
     </a>
   </div>
 
-  <main class="page-main-content">
-    <h1 id="hizmet-title" class="page-main-title">Mekanik Tesisat Çözümleri</h1>
-    <p id="hizmet-desc" class="page-main-desc">
+  <main style="padding: 100px 0; max-width: 800px; margin: 0 auto; text-align: center;">
+    <h1 id="hizmet-title" style="font-family: var(--font-sans); font-weight: 900; font-size: 2.5rem; color: var(--text-dark); margin-bottom: 20px;">Mekanik Tesisat Çözümleri</h1>
+    <p id="hizmet-desc" style="font-size: 1.1rem; color: var(--text-medium); line-height: 1.8; margin-bottom: 40px;">
       İlgili hizmet dalında uzman mühendislerimiz tarafından yapılan planlama, yüksek standartlarda malzeme seçimi ve uluslararası normlara (ASHRAE, TS EN, NFPA vb.) uygun titiz işçilik ile projelerinizi kusursuz bir şekilde teslim ediyoruz. 
     </p>
     
-    <div class="services-info-grid">
-      <div class="service-info-card">
-        <h3 class="service-info-card-title">Projelendirme & Mühendislik</h3>
-        <p class="service-info-card-desc">Keşiften anahtar teslime kadar tüm hesaplamalar (ısı kaybı/kazancı, debi, basınç kayıpları) hassasiyetle yapılarak en optimum ve enerji verimli tesisat mimarisi çıkarılır.</p>
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: left;">
+      <div style="background: #f8fafc; padding: 30px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.05);">
+        <h3 style="font-size: 1.2rem; color: var(--brand-blue); margin-bottom: 10px;">Projelendirme & Mühendislik</h3>
+        <p style="font-size: 0.95rem; color: var(--text-medium);">Keşiften anahtar teslime kadar tüm hesaplamalar (ısı kaybı/kazancı, debi, basınç kayıpları) hassasiyetle yapılarak en optimum ve enerji verimli tesisat mimarisi çıkarılır.</p>
       </div>
-      <div class="service-info-card">
-        <h3 class="service-info-card-title">Saha Uygulaması</h3>
-        <p class="service-info-card-desc">Özel eğitimli ve yetki belgeli teknik personelimiz, iş güvenliği kurallarına tam riayet ederek mekanik montaj ve izolasyon süreçlerini sahada gerçekleştirir.</p>
+      <div style="background: #f8fafc; padding: 30px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.05);">
+        <h3 style="font-size: 1.2rem; color: var(--brand-blue); margin-bottom: 10px;">Saha Uygulaması</h3>
+        <p style="font-size: 0.95rem; color: var(--text-medium);">Özel eğitimli ve yetki belgeli teknik personelimiz, iş güvenliği kurallarına tam riayet ederek mekanik montaj ve izolasyon süreçlerini sahada gerçekleştirir.</p>
       </div>
     </div>
   </main>

@@ -45,25 +45,29 @@
         </div>
         <a href="index.html#iletisim">İletişim</a>
       </nav>
-      <button class="mobile-menu-btn" aria-label="Menüyü Aç">
+      <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü">
         <i class="fa-solid fa-bars"></i>
       </button>
     </div>
   </header>
 
-  <!-- ================================================================
-       MOBILE NAV OVERLAY (Sadece Mobilde)
-       ================================================================ -->
-  <div class="mobile-nav-overlay">
-    <div class="mobile-nav-close">
-      <i class="fa-solid fa-xmark"></i>
+  <!-- MOBILE NAV OVERLAY -->
+  <div class="mobile-nav-overlay" id="mobileNavOverlay">
+    <div class="mobile-nav-header">
+      <a href="index.html" class="logo">
+        <span class="logo-text-top" style="color: #ffffff;">ÇİZGİ</span>
+        <span class="logo-divider"></span>
+        <span class="logo-text-bottom">MEKANİK</span>
+      </a>
+      <button class="mobile-nav-close" id="mobileNavClose" aria-label="Kapat">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
     </div>
-    <div class="mobile-nav-content">
-      <a href="index.html" class="mobile-nav-link">Ana Sayfa</a>
-      <a href="hakkimizda.html" class="mobile-nav-link">Hakkımızda</a>
-      
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Ana Sayfa <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem;"></i></a>
+      <a href="hakkimizda.html" class="mobile-nav-link">Hakkımızda <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem;"></i></a>
       <div class="mobile-nav-dropdown">
-        <span class="mobile-nav-dropdown-title">Hizmetlerimiz <i class="fa-solid fa-chevron-down"></i></span>
+        <div class="mobile-nav-link" style="cursor: pointer;">Hizmetlerimiz <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem;"></i></div>
         <div class="mobile-nav-dropdown-content">
           <a href="hizmet.html?tip=havalandirma">Sakarya Isıtma, Soğutma ve Havalandırma</a>
           <a href="hizmet.html?tip=yangin">Sakarya Yangın Tesisatı ve İzolasyon</a>
@@ -72,25 +76,22 @@
           <a href="hizmet.html?tip=celik">Sakarya Hafif Çelik Platform İşleri</a>
         </div>
       </div>
-      
-      <a href="index.html#iletisim" class="mobile-nav-link">İletişim</a>
+      <a href="index.html#iletisim" class="mobile-nav-link">İletişim <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem;"></i></a>
     </div>
   </div>
 
-  <!-- ================================================================
-       MOBILE FAB BUTTONS (Sadece Mobilde)
-       ================================================================ -->
+  <!-- MOBILE FABs -->
   <div class="mobile-fabs">
-    <a href="tel:05322884594" class="fab-btn fab-phone" aria-label="Hemen Arayın">
-      <i class="fa-solid fa-phone"></i>
-    </a>
-    <a href="https://wa.me/905322884594" class="fab-btn fab-whatsapp" aria-label="WhatsApp İletişim">
+    <a href="https://wa.me/905322884594" class="fab-btn whatsapp" aria-label="WhatsApp">
       <i class="fa-brands fa-whatsapp"></i>
+    </a>
+    <a href="tel:05322884594" class="fab-btn phone" aria-label="Telefon">
+      <i class="fa-solid fa-phone"></i>
     </a>
   </div>
 
-  <main class="page-main-content">
-    <h1 class="page-main-title">Hakkımızda</h1>
+  <main style="padding: 100px 0; max-width: 800px; margin: 0 auto; text-align: center;">
+    <h1 style="font-family: var(--font-sans); font-weight: 900; font-size: 3rem; color: var(--text-dark); margin-bottom: 20px;">Hakkımızda</h1>
     <p style="font-size: 1.1rem; color: var(--text-medium); line-height: 1.8; margin-bottom: 30px;">
       Çizgi Mekanik, 2010 yılından bu yana endüstriyel tesisler, hastaneler, fabrikalar ve ticari kompleksler için 
       en yüksek standartlarda mekanik tesisat mühendisliği çözümleri sunmaktadır. 
