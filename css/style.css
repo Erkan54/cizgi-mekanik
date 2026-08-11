@@ -1131,6 +1131,15 @@ a {
     opacity: 0.35 !important;
     transform: scale(0.78) !important;
     z-index: 1 !important;
+    user-select: none !important;
+    -webkit-user-select: none !important;
+    -webkit-user-drag: none !important;
+    touch-action: pan-y !important;
+  }
+
+  .ticker-item img {
+    pointer-events: none !important;
+    -webkit-user-drag: none !important;
   }
 
   .ticker-item.mobile-active {
