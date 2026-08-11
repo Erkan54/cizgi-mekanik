@@ -156,7 +156,7 @@ function initMobileBrandSlider() {
       track.style.transition = 'transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
     } else {
       track.style.transition = 'none';
-      items.forEach(item => item.style.transition = 'none');
+      items.forEach(item => item.classList.add('no-transition-mobile'));
     }
 
     const offset = -(currentIndex - 1) * (100 / 3);
@@ -174,7 +174,7 @@ function initMobileBrandSlider() {
     if (!animate) {
       void track.offsetWidth;
       setTimeout(() => {
-        items.forEach(item => item.style.transition = '');
+        items.forEach(item => item.classList.remove('no-transition-mobile'));
       }, 50);
     }
   }

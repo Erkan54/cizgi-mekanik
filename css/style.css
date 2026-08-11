@@ -1150,6 +1150,10 @@ a {
     z-index: 2 !important;
   }
 
+  .no-transition-mobile {
+    transition: none !important;
+  }
+
   .logo-box {
     height: 100px !important;
     display: flex !important;
