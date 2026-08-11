@@ -1151,7 +1151,8 @@ a {
   }
 
   .no-transition-mobile,
-  .no-transition-mobile * {
+  .no-transition-mobile .hover-tag,
+  .no-transition-mobile .logo-box {
     transition: none !important;
   }
 
