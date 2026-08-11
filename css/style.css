@@ -488,7 +488,7 @@ a {
 }
 
 .logo-box {
-  height: 230px;
+  height: 165px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -500,7 +500,7 @@ a {
 .logo-box img {
   max-height: 100%;
   width: auto;
-  max-width: 525px;
+  max-width: 375px;
   object-fit: contain;
 }
 
