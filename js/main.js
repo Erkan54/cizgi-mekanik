@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initTickerInteraction();
   initNavTabActive();
   initMobileMenu();
+  initMobileBrandSlider();
 });
 
 function initPreloader() {
@@ -129,3 +130,128 @@ function initMobileMenu() {
     });
   });
 }
+
+/**
+ * Mobile Brands Auto-Loop 3-Item Carousel
+ */
+function initMobileBrandSlider() {
+  const container = document.querySelector('.ticker-container');
+  const track = document.querySelector('.ticker-track');
+  if (!container || !track) return;
+
+  const items = Array.from(track.querySelectorAll('.ticker-item'));
+  if (items.length === 0) return;
+
+  let currentIndex = 1;
+  let autoPlayInterval = null;
+  let touchStartX = 0;
+  let touchEndX = 0;
+  const totalItems = items.length;
+  const originalCount = totalItems >= 12 ? 6 : totalItems;
+
+  function updateSlider(animate = true) {
+    if (window.innerWidth > 768) return;
+
+    if (animate) {
+      track.style.transition = 'transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
+    } else {
+      track.style.transition = 'none';
+    }
+
+    const offset = -(currentIndex - 1) * (100 / 3);
+    track.style.transform = `translateX(${offset}%)`;
+
+    items.forEach((item, index) => {
+      item.classList.remove('mobile-active', 'mobile-side');
+      if (index === currentIndex) {
+        item.classList.add('mobile-active');
+      } else if (index === currentIndex - 1 || index === currentIndex + 1) {
+        item.classList.add('mobile-side');
+      }
+    });
+  }
+
+  function nextSlide() {
+    if (window.innerWidth > 768) return;
+    currentIndex++;
+    updateSlider(true);
+
+    if (currentIndex >= originalCount + 1) {
+      setTimeout(() => {
+        if (window.innerWidth > 768) return;
+        currentIndex = 1;
+        updateSlider(false);
+      }, 400);
+    }
+  }
+
+  function prevSlide() {
+    if (window.innerWidth > 768) return;
+    currentIndex--;
+    if (currentIndex < 0) {
+      currentIndex = originalCount - 1;
+      updateSlider(false);
+    } else {
+      updateSlider(true);
+    }
+  }
+
+  function startAutoPlay() {
+    stopAutoPlay();
+    if (window.innerWidth <= 768) {
+      autoPlayInterval = setInterval(() => {
+        nextSlide();
+      }, 1000);
+    }
+  }
+
+  function stopAutoPlay() {
+    if (autoPlayInterval) {
+      clearInterval(autoPlayInterval);
+      autoPlayInterval = null;
+    }
+  }
+
+  function checkAndInit() {
+    if (window.innerWidth <= 768) {
+      currentIndex = 1;
+      updateSlider(false);
+      startAutoPlay();
+    } else {
+      stopAutoPlay();
+      track.style.transform = '';
+      track.style.transition = '';
+      items.forEach(item => item.classList.remove('mobile-active', 'mobile-side'));
+    }
+  }
+
+  // Touch swipe handling
+  container.addEventListener('touchstart', (e) => {
+    if (window.innerWidth > 768) return;
+    touchStartX = e.touches[0].clientX;
+    stopAutoPlay();
+  }, { passive: true });
+
+  container.addEventListener('touchend', (e) => {
+    if (window.innerWidth > 768) return;
+    touchEndX = e.changedTouches[0].clientX;
+    const diff = touchStartX - touchEndX;
+    if (Math.abs(diff) > 35) {
+      if (diff > 0) {
+        nextSlide();
+      } else {
+        prevSlide();
+      }
+    }
+    startAutoPlay();
+  }, { passive: true });
+
+  checkAndInit();
+
+  let resizeTimeout;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(checkAndInit, 150);
+  });
+}
+

@@ -1082,18 +1082,20 @@ a {
     align-items: center !important;
   }
 
-  /* 5. Brands Slider & Touch Scroll */
+  /* 5. Brands Slider & Auto-looping 3-Item Carousel */
   .brands-wrapper {
     padding-top: 15px !important;
     padding-bottom: 15px !important;
+    overflow: hidden !important;
   }
 
   .ticker-container {
     width: 100% !important;
-    overflow-x: auto !important;
-    scroll-snap-type: x mandatory !important;
-    -webkit-overflow-scrolling: touch !important;
-    padding: 15px 0 25px !important;
+    overflow: hidden !important;
+    position: relative !important;
+    padding: 25px 0 65px !important;
+    touch-action: pan-y !important;
+    scroll-snap-type: none !important;
   }
 
   .ticker-container::before,
@@ -1104,53 +1106,91 @@ a {
   .ticker-track,
   .brands-ticker-track {
     animation: none !important;
-    width: max-content !important;
+    width: 100% !important;
     display: flex !important;
-    gap: 12px !important;
+    align-items: center !important;
+    gap: 0 !important;
+    transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+    will-change: transform;
   }
 
   .ticker-item {
-    scroll-snap-align: center !important;
-    flex-shrink: 0 !important;
-    margin: 0 8px !important;
-    width: 160px !important;
-    min-width: 160px !important;
+    scroll-snap-align: none !important;
+    flex: 0 0 33.3333% !important;
+    width: 33.3333% !important;
+    min-width: 33.3333% !important;
+    max-width: 33.3333% !important;
+    margin: 0 !important;
     box-sizing: border-box !important;
-    text-align: center !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
+    justify-content: center !important;
+    position: relative !important;
+    transition: transform 0.4s ease, opacity 0.4s ease, filter 0.4s ease !important;
+    opacity: 0.35 !important;
+    transform: scale(0.78) !important;
+    z-index: 1 !important;
+  }
+
+  .ticker-item.mobile-active {
+    opacity: 1 !important;
+    transform: scale(1.25) !important;
+    z-index: 5 !important;
+    filter: none !important;
+  }
+
+  .ticker-item.mobile-active .logo-box {
+    filter: drop-shadow(0 6px 14px rgba(0, 114, 188, 0.18)) !important;
+  }
+
+  .ticker-item.mobile-side {
+    opacity: 0.5 !important;
+    transform: scale(0.85) !important;
+    z-index: 2 !important;
   }
 
   .logo-box {
-    height: 140px !important;
+    height: 100px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+    padding: 0 4px !important;
   }
 
   .logo-box img {
-    max-height: 112px !important;
-    max-width: 182px !important;
+    max-height: 85px !important;
+    max-width: 90% !important;
+    object-fit: contain !important;
   }
 
   .hover-tag {
+    position: absolute !important;
+    bottom: -38px !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(8px) !important;
     opacity: 0 !important;
     visibility: hidden !important;
-    position: absolute !important;
-    bottom: -35px !important;
-    left: 50% !important;
-    transform: translateX(-50%) translateY(10px) !important;
-    margin-top: 0 !important;
+    transition: opacity 0.35s ease, transform 0.35s ease, visibility 0.35s ease !important;
     font-size: 0.72rem !important;
-    padding: 5px 10px !important;
-    white-space: normal !important;
+    font-weight: 700 !important;
+    color: var(--brand-blue) !important;
+    background: #ffffff !important;
+    border: 1px solid rgba(0, 114, 188, 0.2) !important;
+    padding: 5px 12px !important;
+    border-radius: 20px !important;
+    white-space: nowrap !important;
     text-align: center !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+    pointer-events: none !important;
     width: max-content !important;
-    max-width: 140px !important;
-    box-sizing: border-box !important;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    max-width: calc(100vw - 36px) !important;
+    text-overflow: ellipsis !important;
+    overflow: hidden !important;
   }
 
-  .ticker-item:hover .hover-tag,
-  .ticker-item:active .hover-tag {
+  .ticker-item.mobile-active .hover-tag {
     opacity: 1 !important;
     visibility: visible !important;
     transform: translateX(-50%) translateY(0) !important;
