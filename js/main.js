@@ -156,6 +156,7 @@ function initMobileBrandSlider() {
       track.style.transition = 'transform 0.4s cubic-bezier(0.25, 1, 0.5, 1)';
     } else {
       track.style.transition = 'none';
+      items.forEach(item => item.style.transition = 'none');
     }
 
     const offset = -(currentIndex - 1) * (100 / 3);
@@ -169,6 +170,13 @@ function initMobileBrandSlider() {
         item.classList.add('mobile-side');
       }
     });
+
+    if (!animate) {
+      void track.offsetWidth;
+      setTimeout(() => {
+        items.forEach(item => item.style.transition = '');
+      }, 50);
+    }
   }
 
   function nextSlide() {
