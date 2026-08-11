@@ -1150,7 +1150,8 @@ a {
     z-index: 2 !important;
   }
 
-  .no-transition-mobile {
+  .no-transition-mobile,
+  .no-transition-mobile * {
     transition: none !important;
   }
 
