@@ -488,7 +488,7 @@ a {
 }
 
 .logo-box {
-  height: 165px;
+  height: 230px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -500,7 +500,7 @@ a {
 .logo-box img {
   max-height: 100%;
   width: auto;
-  max-width: 375px;
+  max-width: 525px;
   object-fit: contain;
 }
 
@@ -1123,12 +1123,12 @@ a {
   }
 
   .logo-box {
-    height: 100px !important;
+    height: 140px !important;
   }
 
   .logo-box img {
-    max-height: 80px !important;
-    max-width: 130px !important;
+    max-height: 112px !important;
+    max-width: 182px !important;
   }
 
   .hover-tag {
