@@ -1132,20 +1132,28 @@ a {
   }
 
   .hover-tag {
-    opacity: 1 !important;
-    visibility: visible !important;
-    position: relative !important;
-    bottom: auto !important;
-    left: auto !important;
-    transform: none !important;
-    margin-top: 8px !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    position: absolute !important;
+    bottom: -35px !important;
+    left: 50% !important;
+    transform: translateX(-50%) translateY(10px) !important;
+    margin-top: 0 !important;
     font-size: 0.72rem !important;
     padding: 5px 10px !important;
     white-space: normal !important;
     text-align: center !important;
-    width: 100% !important;
+    width: max-content !important;
+    max-width: 140px !important;
     box-sizing: border-box !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .ticker-item:hover .hover-tag,
+  .ticker-item:active .hover-tag {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: translateX(-50%) translateY(0) !important;
   }
 
   /* 6. Page Layouts & Contact Section */
