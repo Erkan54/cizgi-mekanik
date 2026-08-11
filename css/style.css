@@ -1397,3 +1397,9 @@ a {
   opacity: 1;
   transform: translateY(0);
 }
+
+@media (max-width: 992px) {
+  .preloader-content {
+    transform: translateY(-8vh) !important;
+  }
+}
