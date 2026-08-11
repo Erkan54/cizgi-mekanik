@@ -899,14 +899,18 @@ a {
     z-index: 99999;
     flex-direction: column;
     padding: 20px 24px;
-    transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    transition: right 0.35s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.35s ease;
     overflow-y: auto;
     box-sizing: border-box;
+    visibility: hidden;
+    pointer-events: none;
   }
 
   .mobile-nav-overlay.open,
   .mobile-nav-overlay.active {
     right: 0 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
   }
 
   .mobile-nav-header {
@@ -1111,6 +1115,8 @@ a {
     margin: 0 8px !important;
     width: 160px !important;
     min-width: 160px !important;
+    box-sizing: border-box !important;
+    text-align: center !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
@@ -1134,9 +1140,11 @@ a {
     transform: none !important;
     margin-top: 8px !important;
     font-size: 0.72rem !important;
-    padding: 5px 12px !important;
+    padding: 5px 10px !important;
     white-space: normal !important;
     text-align: center !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
   }
 
