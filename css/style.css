@@ -359,14 +359,14 @@ a {
 /* Arkaplan Silik TEKNOSER Filigranı */
 .hero-watermark {
   position: absolute;
-  top: 34%;
+  top: 35%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: 'Montserrat', var(--font-sans);
-  font-size: clamp(5.5rem, 14.5vw, 13rem);
+  font-size: clamp(7.5rem, 19vw, 18rem); /* Büyütüldü */
   font-weight: 900;
-  letter-spacing: 0.12em;
-  color: rgba(0, 59, 109, 0.042); /* Çok silik, estetik lacivert tonlu filigran */
+  letter-spacing: 0.10em;
+  color: rgba(0, 59, 109, 0.045); /* Çok silik, estetik lacivert tonlu filigran */
   text-transform: uppercase;
   user-select: none;
   pointer-events: none;
@@ -1593,8 +1593,8 @@ a {
   }
 
   .hero-watermark {
-    font-size: clamp(3.0rem, 15vw, 5.5rem) !important;
-    top: 22% !important;
+    font-size: clamp(4.0rem, 18.5vw, 7.5rem) !important;
+    top: 24% !important;
     letter-spacing: 0.08em !important;
   }
 
