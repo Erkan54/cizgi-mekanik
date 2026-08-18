@@ -945,6 +945,7 @@ a {
   color: var(--text-dark);
   margin-bottom: 14px;
   line-height: 1.2;
+  min-height: 44px;
 }
 
 .hizmet-desc-text {
@@ -952,6 +953,7 @@ a {
   color: var(--text-medium);
   line-height: 1.75;
   margin-bottom: 24px;
+  min-height: 68px; /* Sabit 3 satır hizası */
 }
 
 .hizmet-grid {
@@ -968,6 +970,10 @@ a {
   border-radius: 12px;
   border: 1px solid rgba(0, 0, 0, 0.06);
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  min-height: 172px; /* Tüm sayfalarda kart yüksekliği ve buton konumu milimetrik sabit */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .hizmet-card h3 {
@@ -975,12 +981,15 @@ a {
   font-weight: 700;
   color: var(--brand-blue);
   margin-bottom: 8px;
+  min-height: 28px;
+  line-height: 1.2;
 }
 
 .hizmet-card p {
   font-size: 1.10rem; /* %20 büyütüldü (0.92rem -> 1.10rem) */
   color: var(--text-medium);
   line-height: 1.65;
+  margin: 0;
 }
 
 /* Hizmet Sidebar */
