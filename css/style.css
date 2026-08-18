@@ -353,6 +353,26 @@ a {
   margin-bottom: 27px;
   /* Butonlar ile markalar arası 3px azaltıldı (30px -> 27px) */
   position: relative;
+  overflow: visible;
+}
+
+/* Arkaplan Silik TEKNOSER Filigranı */
+.hero-watermark {
+  position: absolute;
+  top: 34%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Montserrat', var(--font-sans);
+  font-size: clamp(5.5rem, 14.5vw, 13rem);
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  color: rgba(0, 59, 109, 0.042); /* Çok silik, estetik lacivert tonlu filigran */
+  text-transform: uppercase;
+  user-select: none;
+  pointer-events: none;
+  z-index: 0;
+  white-space: nowrap;
+  line-height: 1;
 }
 
 .hero-titles {
@@ -360,6 +380,8 @@ a {
   flex-direction: column;
   align-items: center;
   margin-bottom: 32px;
+  position: relative;
+  z-index: 1;
 }
 
 /* Teknoser badge above ÇİZGİ */
@@ -1568,6 +1590,12 @@ a {
   .hero-container {
     padding-top: 0 !important;
     margin-bottom: 20px !important;
+  }
+
+  .hero-watermark {
+    font-size: clamp(3.0rem, 15vw, 5.5rem) !important;
+    top: 22% !important;
+    letter-spacing: 0.08em !important;
   }
 
   .hero-titles {
