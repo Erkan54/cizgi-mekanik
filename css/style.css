@@ -59,7 +59,7 @@ body::before {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: linear-gradient(135deg, rgba(0, 114, 188, 0.38), rgba(10, 25, 47, 0.28)), url('../assets/bg-image.png');
+  background-image: linear-gradient(135deg, rgba(0, 114, 188, 0.38), rgba(10, 25, 47, 0.28)), url('../assets/bg-image.webp');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -69,33 +69,33 @@ body::before {
   filter: contrast(120%);
 }
 
-/* Kategori Sayfaları Özel Arkaplan Görselleri (Mavi ton & %18 opaklık) */
+/* Kategori Sayfaları Özel Arkaplan Görselleri (Ultra Hızlı WebP, %18 opaklık) */
 body[data-service="havalandirma"]::before {
-  background-image: linear-gradient(135deg, rgba(0, 114, 188, 0.38), rgba(10, 25, 47, 0.28)), url('../assets/hizmet_hvac.png');
+  background-image: linear-gradient(135deg, rgba(0, 114, 188, 0.38), rgba(10, 25, 47, 0.28)), url('../assets/hizmet_hvac.webp');
 }
 
 body[data-service="yangin"]::before {
-  background-image: linear-gradient(135deg, rgba(0, 114, 188, 0.38), rgba(10, 25, 47, 0.28)), url('../assets/hizmet_yangin.png');
+  background-image: linear-gradient(135deg, rgba(0, 114, 188, 0.38), rgba(10, 25, 47, 0.28)), url('../assets/hizmet_yangin.webp');
 }
 
 body[data-service="su"]::before {
-  background-image: linear-gradient(135deg, rgba(0, 114, 188, 0.38), rgba(10, 25, 47, 0.28)), url('../assets/hizmet_su.png');
+  background-image: linear-gradient(135deg, rgba(0, 114, 188, 0.38), rgba(10, 25, 47, 0.28)), url('../assets/hizmet_su.webp');
 }
 
 body[data-service="kombi"]::before {
-  background-image: linear-gradient(135deg, rgba(0, 114, 188, 0.38), rgba(10, 25, 47, 0.28)), url('../assets/hizmet_kombi.png');
+  background-image: linear-gradient(135deg, rgba(0, 114, 188, 0.38), rgba(10, 25, 47, 0.28)), url('../assets/hizmet_kombi.webp');
 }
 
 body[data-service="celik"]::before {
-  background-image: linear-gradient(135deg, rgba(0, 114, 188, 0.38), rgba(10, 25, 47, 0.28)), url('../assets/hizmet_celik.png');
+  background-image: linear-gradient(135deg, rgba(0, 114, 188, 0.38), rgba(10, 25, 47, 0.28)), url('../assets/hizmet_celik.webp');
 }
 
 body[data-service="klima-santrali"]::before {
-  background-image: linear-gradient(135deg, rgba(0, 114, 188, 0.38), rgba(10, 25, 47, 0.28)), url('../assets/hizmet_klima_santrali.png');
+  background-image: linear-gradient(135deg, rgba(0, 114, 188, 0.38), rgba(10, 25, 47, 0.28)), url('../assets/hizmet_klima_santrali.webp');
 }
 
 body[data-service="chiller"]::before {
-  background-image: linear-gradient(135deg, rgba(0, 114, 188, 0.38), rgba(10, 25, 47, 0.28)), url('../assets/hizmet_chiller.png');
+  background-image: linear-gradient(135deg, rgba(0, 114, 188, 0.38), rgba(10, 25, 47, 0.28)), url('../assets/hizmet_chiller.webp');
 }
 
 p,
