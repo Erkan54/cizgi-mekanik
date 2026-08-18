@@ -174,7 +174,7 @@ a {
   justify-content: center;
   text-decoration: none;
   line-height: 1;
-  margin-left: 12px;
+  margin-left: -8px; /* Webte logo biraz sola çekildi */
 }
 
 .logo img {
