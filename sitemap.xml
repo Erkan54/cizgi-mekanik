@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+  <!-- Ana Sayfa -->
+  <url>
+    <loc>https://cizgimekanik.com/</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://cizgimekanik.com/index.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  <!-- Sakarya Chiller Sistemleri -->
+  <url>
+    <loc>https://cizgimekanik.com/sakarya-chiller-sistemleri.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Sakarya Klima Santralleri -->
+  <url>
+    <loc>https://cizgimekanik.com/sakarya-klima-santralleri.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Sakarya Isıtma Soğutma Havalandırma -->
+  <url>
+    <loc>https://cizgimekanik.com/sakarya-isitma-sogutma-havalandirma.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Sakarya Yangın Tesisatı ve İzolasyon -->
+  <url>
+    <loc>https://cizgimekanik.com/sakarya-yangin-tesisati-izolasyon.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Sakarya Temiz ve Pis Su Tesisatı -->
+  <url>
+    <loc>https://cizgimekanik.com/sakarya-temiz-pis-su-tesisati.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Sakarya Kalorifer Kombi Yerden Isıtma -->
+  <url>
+    <loc>https://cizgimekanik.com/sakarya-kombi-kalorifer-yerden-isitma.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Sakarya Hafif Çelik Platform -->
+  <url>
+    <loc>https://cizgimekanik.com/sakarya-hafif-celik-platform.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- Kurumsal Sayfalar -->
+  <url>
+    <loc>https://cizgimekanik.com/hakkimizda.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cizgimekanik.com/vizyon-misyon.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://cizgimekanik.com/firmalar.html</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+</urlset>

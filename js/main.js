@@ -8,58 +8,92 @@ document.addEventListener('DOMContentLoaded', () => {
   initNavTabActive();
   initMobileMenu();
   initMobileBrandSlider();
+  initScrollToTop();
 });
 
+/* ==========================================================================
+   PRELOADER - Sadece İlk Açılışta ve Sayfa Yenilemede (F5) 1.2 Saniye
+   ========================================================================== */
 function initPreloader() {
   const preloader = document.getElementById('preloader');
-
   if (!preloader) return;
 
+  // Site içi link tıklamalarını dinle
   document.querySelectorAll('a[href]').forEach(link => {
-    link.addEventListener('click', (e) => {
+    link.addEventListener('click', () => {
       const href = link.getAttribute('href');
       if (href && !href.startsWith('#') && !href.startsWith('tel:') && !href.startsWith('mailto:') && !href.startsWith('https://wa.me')) {
-        sessionStorage.setItem('isInternalNav', 'true');
+        sessionStorage.setItem('isInternalLink', 'true');
       }
     });
   });
 
-  const isInternalNav = sessionStorage.getItem('isInternalNav');
-  sessionStorage.removeItem('isInternalNav');
+  // Sayfa yenilenme (F5) veya ilk açılış kontrolü
+  const navEntries = performance.getEntriesByType('navigation');
+  const isReload = navEntries.length > 0 && navEntries[0].type === 'reload';
+  const isInternalLink = sessionStorage.getItem('isInternalLink') === 'true';
 
-  if (isInternalNav) {
+  // Kontrol sonrası bayrağı temizle
+  sessionStorage.removeItem('isInternalLink');
+
+  // Sayfa içi gezinmeyse VE yenileme değilse -> Preloader'ı göstermeden direkt kapat
+  if (isInternalLink && !isReload) {
     preloader.style.display = 'none';
-    if (preloader.parentNode) preloader.parentNode.removeChild(preloader);
+    if (preloader.parentNode) {
+      preloader.parentNode.removeChild(preloader);
+    }
     return;
   }
 
-  const hidePreloader = () => {
-    preloader.classList.add('fade-out');
-    setTimeout(() => {
-      if (preloader.parentNode) {
-        preloader.parentNode.removeChild(preloader);
-      }
-    }, 800);
-  };
-
-  const minDisplayTime = 1500; // Minimum time for full reveal animation
+  // İlk açılış veya Sayfa Yenileme (F5) durumunda tam 1.2 saniye (1200ms) göster
+  const displayDuration = 1200;
   const startTime = performance.now();
 
-  const handlePageLoad = () => {
+  const hidePreloader = () => {
     const elapsedTime = performance.now() - startTime;
-    const remainingTime = Math.max(0, minDisplayTime - elapsedTime);
+    const remainingTime = Math.max(0, displayDuration - elapsedTime);
 
-    setTimeout(hidePreloader, remainingTime);
+    setTimeout(() => {
+      preloader.classList.add('fade-out');
+      setTimeout(() => {
+        if (preloader.parentNode) {
+          preloader.parentNode.removeChild(preloader);
+        }
+      }, 500); // 0.5s yumuşak kaybolma
+    }, remainingTime);
   };
 
   if (document.readyState === 'complete') {
-    handlePageLoad();
+    hidePreloader();
   } else {
-    window.addEventListener('load', handlePageLoad);
-    setTimeout(hidePreloader, 3500); // Fallback timeout
+    window.addEventListener('load', hidePreloader);
+    setTimeout(hidePreloader, 2500); // Güvenlik zaman aşımı
   }
 }
 
+/* ==========================================================================
+   SCROLL TO TOP
+   ========================================================================== */
+function initScrollToTop() {
+  const btn = document.getElementById('scrollTopBtn');
+  if (!btn) return;
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 400) {
+      btn.classList.add('visible');
+    } else {
+      btn.classList.remove('visible');
+    }
+  });
+
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
+/* ==========================================================================
+   TICKER INTERACTION (Desktop)
+   ========================================================================== */
 function initTickerInteraction() {
   const tickerTrack = document.querySelector('.brands-ticker-track');
   const brandCards = document.querySelectorAll('.brand-card');
@@ -74,6 +108,9 @@ function initTickerInteraction() {
   });
 }
 
+/* ==========================================================================
+   NAVIGATION ACTIVE STATE
+   ========================================================================== */
 function initNavTabActive() {
   const navLinks = document.querySelectorAll('.nav-link');
   const sections = document.querySelectorAll('section');
@@ -97,6 +134,9 @@ function initNavTabActive() {
   });
 }
 
+/* ==========================================================================
+   MOBILE MENU
+   ========================================================================== */
 function initMobileMenu() {
   const menuBtn = document.getElementById('mobileMenuBtn');
   const closeBtn = document.getElementById('mobileNavClose');
@@ -129,11 +169,28 @@ function initMobileMenu() {
       }
     });
   });
+
+  // Mobile dropdown toggle
+  const dropdownToggles = document.querySelectorAll('.mobile-nav-dropdown > .mobile-nav-link');
+  dropdownToggles.forEach(toggle => {
+    toggle.addEventListener('click', () => {
+      const dropdown = toggle.parentElement;
+      const content = dropdown.querySelector('.mobile-nav-dropdown-content');
+      if (content) {
+        const isVisible = content.style.display === 'flex';
+        content.style.display = isVisible ? 'none' : 'flex';
+        const icon = toggle.querySelector('i');
+        if (icon) {
+          icon.style.transform = isVisible ? 'rotate(0deg)' : 'rotate(180deg)';
+        }
+      }
+    });
+  });
 }
 
-/**
- * Mobile Brands Auto-Loop 3-Item Carousel
- */
+/* ==========================================================================
+   MOBILE BRANDS AUTO-LOOP 3-ITEM CAROUSEL
+   ========================================================================== */
 function initMobileBrandSlider() {
   const container = document.querySelector('.ticker-container');
   const track = document.querySelector('.ticker-track');
@@ -147,7 +204,7 @@ function initMobileBrandSlider() {
   let touchStartX = 0;
   let touchEndX = 0;
   const totalItems = items.length;
-  const originalCount = totalItems >= 12 ? 6 : totalItems;
+  const originalCount = totalItems >= 14 ? 7 : totalItems;
 
   function updateSlider(animate = true) {
     if (window.innerWidth > 768) return;
@@ -262,4 +319,3 @@ function initMobileBrandSlider() {
     resizeTimeout = setTimeout(checkAndInit, 150);
   });
 }
-

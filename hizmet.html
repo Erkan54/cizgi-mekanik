@@ -3,46 +3,52 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hizmet Detay | Çizgi Mekanik</title>
+  <title>Hizmet Detay | Teknoser Çizgi Mekanik</title>
+  <meta name="description" content="Teknoser Çizgi Mekanik hizmet detayları. Sakarya'da profesyonel mekanik tesisat, HVAC, yangın tesisatı, su tesisatı, klima santralleri ve chiller kurulumu.">
+  <meta name="keywords" content="Sakarya mekanik tesisat, HVAC, klima santrali, chiller, yangın tesisatı, Çizgi Mekanik">
+  <meta property="og:title" content="Hizmet Detay | Teknoser Çizgi Mekanik">
+  <meta property="og:description" content="1954'ten bu yana profesyonel mekanik tesisat çözümleri.">
+  <meta property="og:type" content="website">
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&family=Outfit:wght@800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Montserrat:ital,wght@0,700;0,800;0,900;1,700;1,800;1,900&family=Outfit:wght@800;900&family=Cormorant+Garamond:ital,wght@0,500;1,500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 </head>
 <body>
 
-  <!-- PRELOADER / LOADING SCREEN -->
+  <!-- PRELOADER -->
   <div id="preloader" class="preloader">
     <div class="preloader-content">
-      <div class="preloader-title-main">ÇİZGİ</div>
-      <div class="preloader-line"></div>
-      <div class="preloader-title-sub">MEKANİK</div>
+      <img src="assets/cizgi_logo.png" alt="Çizgi Mekanik" class="preloader-logo">
+      <div class="preloader-slogan">Tesisatta Kusursuz Çizgi</div>
     </div>
   </div>
 
-  <!-- TOP BAR -->
+  <!-- HEADER -->
   <header class="header">
     <div class="container header-inner">
       <a href="index.html" class="logo">
-        <span class="logo-text-top">ÇİZGİ</span>
-        <span class="logo-divider"></span>
-        <span class="logo-text-bottom">MEKANİK</span>
+        <img src="assets/cizgi_logo.png" alt="Çizgi Mekanik Logo">
       </a>
       <nav class="nav-links">
         <a href="index.html">Ana Sayfa</a>
         <a href="hakkimizda.html">Hakkımızda</a>
+        <a href="vizyon-misyon.html">Vizyon & Misyon</a>
         <div class="dropdown">
           <a href="#" style="cursor: default;">Hizmetlerimiz <i class="fa-solid fa-chevron-down" style="font-size: 0.7rem; margin-left: 3px;"></i></a>
           <div class="dropdown-content">
-            <a href="hizmet.html?tip=havalandirma">Sakarya Isıtma, Soğutma ve Havalandırma</a>
-            <a href="hizmet.html?tip=yangin">Sakarya Yangın Tesisatı ve İzolasyon</a>
-            <a href="hizmet.html?tip=su">Sakarya Temiz ve Pis Su Tesisatı</a>
-            <a href="hizmet.html?tip=kombi">Sakarya Kalorifer, Kombi ve Yerden Isıtma</a>
-            <a href="hizmet.html?tip=celik">Sakarya Hafif Çelik Platform İşleri</a>
+            <a href="sakarya-isitma-sogutma-havalandirma.html">Sakarya Isıtma, Soğutma ve Havalandırma</a>
+            <a href="sakarya-yangin-tesisati-izolasyon.html">Sakarya Yangın Tesisatı ve İzolasyon</a>
+            <a href="sakarya-temiz-pis-su-tesisati.html">Sakarya Temiz ve Pis Su Tesisatı</a>
+            <a href="sakarya-kombi-kalorifer-yerden-isitma.html">Sakarya Kalorifer, Kombi ve Yerden Isıtma</a>
+            <a href="sakarya-hafif-celik-platform.html">Sakarya Hafif Çelik Platform İşleri</a>
+            <a href="sakarya-klima-santralleri.html">Sakarya Klima Santralleri</a>
+            <a href="sakarya-chiller-sistemleri.html">Sakarya Chiller Sistemleri</a>
           </div>
         </div>
+        <a href="firmalar.html">Firmalar</a>
         <a href="index.html#iletisim">İletişim</a>
       </nav>
       <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menü">
@@ -55,9 +61,7 @@
   <div class="mobile-nav-overlay" id="mobileNavOverlay">
     <div class="mobile-nav-header">
       <a href="index.html" class="logo">
-        <span class="logo-text-top" style="color: #ffffff;">ÇİZGİ</span>
-        <span class="logo-divider"></span>
-        <span class="logo-text-bottom">MEKANİK</span>
+        <img src="assets/cizgi_logo.png" alt="Çizgi Mekanik">
       </a>
       <button class="mobile-nav-close" id="mobileNavClose" aria-label="Kapat">
         <i class="fa-solid fa-xmark"></i>
@@ -66,16 +70,20 @@
     <div class="mobile-nav-links">
       <a href="index.html" class="mobile-nav-link">Ana Sayfa <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem;"></i></a>
       <a href="hakkimizda.html" class="mobile-nav-link">Hakkımızda <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem;"></i></a>
+      <a href="vizyon-misyon.html" class="mobile-nav-link">Vizyon & Misyon <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem;"></i></a>
       <div class="mobile-nav-dropdown">
         <div class="mobile-nav-link" style="cursor: pointer;">Hizmetlerimiz <i class="fa-solid fa-chevron-down" style="font-size: 0.8rem;"></i></div>
         <div class="mobile-nav-dropdown-content">
-          <a href="hizmet.html?tip=havalandirma">Sakarya Isıtma, Soğutma ve Havalandırma</a>
-          <a href="hizmet.html?tip=yangin">Sakarya Yangın Tesisatı ve İzolasyon</a>
-          <a href="hizmet.html?tip=su">Sakarya Temiz ve Pis Su Tesisatı</a>
-          <a href="hizmet.html?tip=kombi">Sakarya Kalorifer, Kombi ve Yerden Isıtma</a>
-          <a href="hizmet.html?tip=celik">Sakarya Hafif Çelik Platform İşleri</a>
+          <a href="sakarya-isitma-sogutma-havalandirma.html">Isıtma, Soğutma ve Havalandırma</a>
+          <a href="sakarya-yangin-tesisati-izolasyon.html">Yangın Tesisatı ve İzolasyon</a>
+          <a href="sakarya-temiz-pis-su-tesisati.html">Temiz ve Pis Su Tesisatı</a>
+          <a href="sakarya-kombi-kalorifer-yerden-isitma.html">Kalorifer, Kombi ve Yerden Isıtma</a>
+          <a href="sakarya-hafif-celik-platform.html">Hafif Çelik Platform İşleri</a>
+          <a href="sakarya-klima-santralleri.html">Klima Santralleri</a>
+          <a href="sakarya-chiller-sistemleri.html">Chiller Sistemleri</a>
         </div>
       </div>
+      <a href="firmalar.html" class="mobile-nav-link">Firmalar <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem;"></i></a>
       <a href="index.html#iletisim" class="mobile-nav-link">İletişim <i class="fa-solid fa-chevron-right" style="font-size: 0.8rem;"></i></a>
     </div>
   </div>
@@ -90,47 +98,65 @@
     </a>
   </div>
 
-  <style>
-    .hizmet-main { padding: 100px 0; max-width: 800px; margin: 0 auto; text-align: center; }
-    .hizmet-title-text { font-family: var(--font-sans); font-weight: 900; font-size: 2.5rem; color: var(--text-dark); margin-bottom: 20px; }
-    .hizmet-desc-text { font-size: 1.1rem; color: var(--text-medium); line-height: 1.8; margin-bottom: 40px; }
-    .hizmet-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; text-align: left; }
-    .hizmet-card { background: #f8fafc; padding: 30px; border-radius: 12px; border: 1px solid rgba(0,0,0,0.05); }
-    .hizmet-card h3 { font-size: 1.2rem; color: var(--brand-blue); margin-bottom: 10px; }
-    .hizmet-card p { font-size: 0.95rem; color: var(--text-medium); }
+  <!-- SCROLL TO TOP -->
+  <button class="scroll-top-btn" id="scrollTopBtn" aria-label="Yukarı git">
+    <i class="fa-solid fa-chevron-up"></i>
+  </button>
 
-    @media (max-width: 992px) {
-      .hizmet-main { padding: 60px 20px; max-width: 700px; }
-      .hizmet-title-text { font-weight: 800; font-size: 2rem; margin-bottom: 15px; }
-      .hizmet-desc-text { font-size: 0.95rem; line-height: 1.6; margin-bottom: 30px; padding: 0 10px; }
-      .hizmet-grid { grid-template-columns: 1fr; gap: 15px; }
-      .hizmet-card { padding: 20px; border-radius: 10px; }
-      .hizmet-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
-      .hizmet-card p { font-size: 0.85rem; line-height: 1.5; }
-    }
-  </style>
-  <main class="hizmet-main">
-    <h1 id="hizmet-title" class="hizmet-title-text">Mekanik Tesisat Çözümleri</h1>
-    <p id="hizmet-desc" class="hizmet-desc-text">
-      İlgili hizmet dalında uzman mühendislerimiz tarafından yapılan planlama, yüksek standartlarda malzeme seçimi ve uluslararası normlara (ASHRAE, TS EN, NFPA vb.) uygun titiz işçilik ile projelerinizi kusursuz bir şekilde teslim ediyoruz. 
-    </p>
-    
-    <div class="hizmet-grid">
-      <div class="hizmet-card">
-        <h3>Projelendirme & Mühendislik</h3>
-        <p>Keşiften anahtar teslime kadar tüm hesaplamalar (ısı kaybı/kazancı, debi, basınç kayıpları) hassasiyetle yapılarak en optimum ve enerji verimli tesisat mimarisi çıkarılır.</p>
+  <main class="hizmet-main container">
+    <!-- Breadcrumb -->
+    <div class="breadcrumb" id="hizmet-breadcrumb">
+      <a href="index.html">Ana Sayfa</a>
+      <span class="separator"><i class="fa-solid fa-chevron-right"></i></span>
+      <span class="current" id="breadcrumb-current">Hizmet Detay</span>
+    </div>
+
+    <div class="hizmet-layout">
+      <div class="hizmet-content">
+        <h1 id="hizmet-title" class="hizmet-title-text">Mekanik Tesisat Çözümleri</h1>
+        <p id="hizmet-desc" class="hizmet-desc-text">
+          İlgili hizmet dalında uzman mühendislerimiz tarafından yapılan planlama, yüksek standartlarda malzeme seçimi ve uluslararası normlara (ASHRAE, TS EN, NFPA vb.) uygun titiz işçilik ile projelerinizi kusursuz bir şekilde teslim ediyoruz. 
+        </p>
+        
+        <div class="hizmet-grid">
+          <div class="hizmet-card">
+            <h3>Projelendirme & Mühendislik</h3>
+            <p>Keşiften anahtar teslime kadar tüm hesaplamalar (ısı kaybı/kazancı, debi, basınç kayıpları) hassasiyetle yapılarak en optimum ve enerji verimli tesisat mimarisi çıkarılır.</p>
+          </div>
+          <div class="hizmet-card">
+            <h3>Saha Uygulaması</h3>
+            <p>Özel eğitimli ve yetki belgeli teknik personelimiz, iş güvenliği kurallarına tam riayet ederek mekanik montaj ve izolasyon süreçlerini sahada gerçekleştirir.</p>
+          </div>
+        </div>
+
+        <!-- Hizmete özel WhatsApp CTA -->
+        <div class="hizmet-cta">
+          <a href="https://wa.me/905322884594" target="_blank" class="btn btn-primary" id="hizmet-whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> Bu Hizmet Hakkında Bilgi Alın
+          </a>
+        </div>
       </div>
-      <div class="hizmet-card">
-        <h3>Saha Uygulaması</h3>
-        <p>Özel eğitimli ve yetki belgeli teknik personelimiz, iş güvenliği kurallarına tam riayet ederek mekanik montaj ve izolasyon süreçlerini sahada gerçekleştirir.</p>
-      </div>
+
+      <!-- Sidebar -->
+      <aside class="hizmet-sidebar">
+        <div class="sidebar-title">Diğer Hizmetlerimiz</div>
+        <div class="sidebar-links" id="sidebar-links">
+          <a href="sakarya-isitma-sogutma-havalandirma.html" data-tip="havalandirma"><i class="fa-solid fa-chevron-right"></i> Isıtma, Soğutma ve Havalandırma</a>
+          <a href="sakarya-yangin-tesisati-izolasyon.html" data-tip="yangin"><i class="fa-solid fa-chevron-right"></i> Yangın Tesisatı ve İzolasyon</a>
+          <a href="sakarya-temiz-pis-su-tesisati.html" data-tip="su"><i class="fa-solid fa-chevron-right"></i> Temiz ve Pis Su Tesisatı</a>
+          <a href="sakarya-kombi-kalorifer-yerden-isitma.html" data-tip="kombi"><i class="fa-solid fa-chevron-right"></i> Kalorifer, Kombi ve Yerden Isıtma</a>
+          <a href="sakarya-hafif-celik-platform.html" data-tip="celik"><i class="fa-solid fa-chevron-right"></i> Hafif Çelik Platform İşleri</a>
+          <a href="sakarya-klima-santralleri.html" data-tip="klima-santrali"><i class="fa-solid fa-chevron-right"></i> Klima Santralleri</a>
+          <a href="sakarya-chiller-sistemleri.html" data-tip="chiller"><i class="fa-solid fa-chevron-right"></i> Chiller Sistemleri</a>
+        </div>
+      </aside>
     </div>
   </main>
 
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-left">
-        <p>© 2026 Çizgi Mekanik. Tüm Hakları Saklıdır.</p>
+        <p>© 2026 Teknoser Çizgi Mekanik. Tüm Hakları Saklıdır.</p>
       </div>
       <div class="footer-right">
         <a href="mailto:info@czgimekanik.com"><i class="fa-regular fa-envelope"></i> info@czgimekanik.com</a>
@@ -146,23 +172,88 @@
     
     const titleEl = document.getElementById('hizmet-title');
     const descEl = document.getElementById('hizmet-desc');
+    const breadcrumbEl = document.getElementById('breadcrumb-current');
+    const whatsappBtn = document.getElementById('hizmet-whatsapp');
 
-    if (tip === 'havalandirma') {
-      titleEl.innerText = "Sakarya Isıtma, Soğutma ve Havalandırma (HVAC)";
-      descEl.innerText = "Hastaneler, endüstriyel tesisler ve ticari merkezler için VRF, Chiller, Klima Santralleri (AHU) ve hassas kontrollü havalandırma sistemlerinin projelendirilmesi ve anahtar teslim kurulum hizmetleri. Optimum iç hava kalitesi (IAQ) ve enerji verimliliği sağlanır.";
-    } else if (tip === 'yangin') {
-      titleEl.innerText = "Sakarya Yangın Tesisatı ve İzolasyon";
-      descEl.innerText = "NFPA ve TS EN 12845 standartlarına uygun sprinkler sistemleri, yangın dolapları, hidrant hatları ve yangın pompa istasyonlarının kurulumu. Ayrıca mekanik tesisat hatlarında ısı ve ses izolasyonu uygulamaları.";
-    } else if (tip === 'su') {
-      titleEl.innerText = "Sakarya Temiz ve Pis Su Tesisatı";
-      descEl.innerText = "Kullanım suyu, arıtma sistemleri, gri su geri kazanımı ve endüstriyel atık su drenaj hatlarının korozyona dayanıklı modern borulama sistemleri ile projelendirilip uygulanması.";
-    } else if (tip === 'kombi') {
-      titleEl.innerText = "Sakarya Kalorifer, Kombi ve Yerden Isıtma";
-      descEl.innerText = "Bireysel ve merkezi kaskad kombi sistemleri, yerden ısıtma borulama çözümleri ve radyatör tesisatlarının yüksek enerji tasarruflu kurulum ve periyodik bakımı.";
-    } else if (tip === 'celik') {
-      titleEl.innerText = "Sakarya Hafif Çelik Platform İşleri";
-      descEl.innerText = "Büyük ölçekli endüstriyel tesislerdeki mekanik cihazların (klima santralleri, soğutma kuleleri, kazanlar) çatı veya zemin yerleşimleri için gerekli olan statik hesaplı çelik taşıyıcı platformların tasarımı ve imalatı.";
+    const hizmetData = {
+      'havalandirma': {
+        title: 'Sakarya Isıtma, Soğutma ve Havalandırma (HVAC)',
+        desc: 'Hastaneler, endüstriyel tesisler ve ticari merkezler için VRF, Chiller, Klima Santralleri (AHU) ve hassas kontrollü havalandırma sistemlerinin projelendirilmesi ve anahtar teslim kurulum hizmetleri. Optimum iç hava kalitesi (IAQ) ve enerji verimliliği sağlanır.',
+        img: 'assets/hizmet_hvac.png',
+        breadcrumb: 'Isıtma, Soğutma ve Havalandırma',
+        whatsapp: 'Merhaba, Isıtma/Soğutma/Havalandırma hizmeti hakkında bilgi almak istiyorum.'
+      },
+      'yangin': {
+        title: 'Sakarya Yangın Tesisatı ve İzolasyon',
+        desc: 'NFPA ve TS EN 12845 standartlarına uygun sprinkler sistemleri, yangın dolapları, hidrant hatları ve yangın pompa istasyonlarının kurulumu. Ayrıca mekanik tesisat hatlarında ısı ve ses izolasyonu uygulamaları.',
+        img: 'assets/hizmet_yangin.png',
+        breadcrumb: 'Yangın Tesisatı ve İzolasyon',
+        whatsapp: 'Merhaba, Yangın Tesisatı ve İzolasyon hizmeti hakkında bilgi almak istiyorum.'
+      },
+      'su': {
+        title: 'Sakarya Temiz ve Pis Su Tesisatı',
+        desc: 'Kullanım suyu, arıtma sistemleri, gri su geri kazanımı ve endüstriyel atık su drenaj hatlarının korozyona dayanıklı modern borulama sistemleri ile projelendirilip uygulanması.',
+        img: 'assets/hizmet_su.png',
+        breadcrumb: 'Temiz ve Pis Su Tesisatı',
+        whatsapp: 'Merhaba, Temiz ve Pis Su Tesisatı hizmeti hakkında bilgi almak istiyorum.'
+      },
+      'kombi': {
+        title: 'Sakarya Kalorifer, Kombi ve Yerden Isıtma',
+        desc: 'Bireysel ve merkezi kaskad kombi sistemleri, yerden ısıtma borulama çözümleri ve radyatör tesisatlarının yüksek enerji tasarruflu kurulum ve periyodik bakımı.',
+        img: 'assets/hizmet_kombi.png',
+        breadcrumb: 'Kalorifer, Kombi ve Yerden Isıtma',
+        whatsapp: 'Merhaba, Kalorifer/Kombi/Yerden Isıtma hizmeti hakkında bilgi almak istiyorum.'
+      },
+      'celik': {
+        title: 'Sakarya Hafif Çelik Platform İşleri',
+        desc: 'Büyük ölçekli endüstriyel tesislerdeki mekanik cihazların (klima santralleri, soğutma kuleleri, kazanlar) çatı veya zemin yerleşimleri için gerekli olan statik hesaplı çelik taşıyıcı platformların tasarımı ve imalatı.',
+        img: 'assets/hizmet_celik.png',
+        breadcrumb: 'Hafif Çelik Platform İşleri',
+        whatsapp: 'Merhaba, Hafif Çelik Platform İşleri hakkında bilgi almak istiyorum.'
+      },
+      'klima-santrali': {
+        title: 'Sakarya Klima Santralleri (AHU) Kurulumu',
+        desc: 'Endüstriyel ve ticari tesisler için standart ve hijyenik klima santrali (AHU) projelendirme, montaj ve devreye alma hizmetleri. Isı geri kazanımlı üniteler, HEPA filtrasyon ve otomasyon ile optimum iç hava kalitesi sağlanır.',
+        img: 'assets/hizmet_klima_santrali.png',
+        breadcrumb: 'Klima Santralleri',
+        whatsapp: 'Merhaba, Klima Santralleri kurulumu hakkında bilgi almak istiyorum.'
+      },
+      'chiller': {
+        title: 'Sakarya Chiller Sistemleri Kurulumu',
+        desc: 'Hava ve su soğutmalı endüstriyel chiller gruplarının projelendirme, montaj ve periyodik bakım hizmetleri. Soğutma kulesi entegrasyonu, hidronik borulama ve otomasyon ile komple soğutma merkezi çözümleri sunulmaktadır.',
+        img: 'assets/hizmet_chiller.png',
+        breadcrumb: 'Chiller Sistemleri',
+        whatsapp: 'Merhaba, Chiller Sistemleri hakkında bilgi almak istiyorum.'
+      }
+    };
+
+    const activeTip = (tip && hizmetData[tip]) ? tip : 'havalandirma';
+    const currentData = hizmetData[activeTip];
+    
+    // Set background image attribute for CSS (18% opacity & blue overlay tint)
+    document.body.setAttribute('data-service', activeTip);
+
+    if (currentData) {
+      titleEl.innerText = currentData.title;
+      descEl.innerText = currentData.desc;
+      breadcrumbEl.innerText = currentData.breadcrumb;
+      document.title = currentData.breadcrumb + ' | Teknoser Çizgi Mekanik';
+      
+      // Hizmete özel WhatsApp mesajı
+      whatsappBtn.href = 'https://wa.me/905322884594?text=' + encodeURIComponent(currentData.whatsapp);
+
+      // Meta description güncelle
+      const metaDesc = document.querySelector('meta[name="description"]');
+      if (metaDesc) metaDesc.content = currentData.desc;
     }
+
+    // Sidebar aktif link
+    const sidebarLinks = document.querySelectorAll('#sidebar-links a');
+    sidebarLinks.forEach(link => {
+      if (link.getAttribute('data-tip') === (tip || 'havalandirma')) {
+        link.classList.add('active');
+      }
+    });
   </script>
   <script src="js/main.js"></script>
 </body>
