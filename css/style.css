@@ -359,14 +359,14 @@ a {
 /* Arkaplan Silik TEKNOSER Filigranı */
 .hero-watermark {
   position: absolute;
-  top: 35%;
+  top: 23%; /* Başlığın tam arkasına kaldırıldı */
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) scale(1, 1.18); /* Yatayı bozmadan dikeyde yukarı uzatma */
   font-family: 'Montserrat', var(--font-sans);
-  font-size: clamp(7.5rem, 19vw, 18rem); /* Büyütüldü */
+  font-size: clamp(5.5rem, 14.5vw, 13rem);
   font-weight: 900;
   letter-spacing: 0.10em;
-  color: rgba(0, 59, 109, 0.045); /* Çok silik, estetik lacivert tonlu filigran */
+  color: rgba(0, 59, 109, 0.025); /* %3 daha silik ve soft ton */
   text-transform: uppercase;
   user-select: none;
   pointer-events: none;
@@ -1593,9 +1593,11 @@ a {
   }
 
   .hero-watermark {
-    font-size: clamp(4.0rem, 18.5vw, 7.5rem) !important;
-    top: 24% !important;
+    font-size: clamp(2.8rem, 15vw, 5.2rem) !important;
+    top: 17% !important;
+    transform: translate(-50%, -50%) scale(1, 1.15) !important;
     letter-spacing: 0.08em !important;
+    color: rgba(0, 59, 109, 0.025) !important;
   }
 
   .hero-titles {
