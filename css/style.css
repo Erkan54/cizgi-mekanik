@@ -1603,10 +1603,10 @@ a {
 
   .hero-watermark {
     font-size: clamp(2.8rem, 15vw, 5.2rem) !important;
-    top: 17% !important;
+    top: calc(17% - 22px) !important; /* 2px daha yukarı taşındı (toplam 22px) */
     transform: translate(-50%, -50%) scale(1, 1.15) !important;
     letter-spacing: 0.08em !important;
-    color: rgba(0, 59, 109, 0.025) !important;
+    color: rgba(0, 59, 109, 0.038) !important; /* Opaklık 0.038 ayarlandı */
   }
 
   .hero-titles {
